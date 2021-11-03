@@ -6,6 +6,7 @@ import Home from './pages'
 import SignInPage from './pages/signin'
 import SignUpPage from './pages/signup';
 
+
 function App() {
   return (
     <Router>
