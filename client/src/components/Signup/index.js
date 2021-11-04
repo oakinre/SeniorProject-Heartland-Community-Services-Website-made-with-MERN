@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import Axios from 'axios'
 import { 
 Container, 
@@ -19,6 +19,14 @@ Form2
 const SignUp = () => {
     const [volunteerName, setVolunteerName] = useState("");
     const [ages, setAges] = useState(0);
+    const[newVolunteerName, setNewVolunteerName] = useState('');
+    const [volunteerList, setVolunteerList] = useState([]);
+
+    useEffect(()=> {
+        Axios.get("http://localhost:3001/read").then((response)=>{
+            setVolunteerList(response.data);
+        })
+    }, []);
 
     const addToList = () => {
         Axios.post("http://localhost:3001/insert", {
@@ -26,6 +34,10 @@ const SignUp = () => {
             ages: ages,
         });
     };
+
+    const updateVolunteer = (id) => {
+        Axios.put("http://localhost:3001/update", {id: id,newVolunteerName: newVolunteerName})
+    }
 
     return (
         <Container>
@@ -62,8 +74,22 @@ const SignUp = () => {
                             <FormInput type='password' required /> */}
                             <FormButton onClick={addToList} type='submit'>Add to List</FormButton>
                             <Text>Forgot password</Text>
+                            
                         {/* </Form2> */}
                     </Form>
+                    <h1>Volunteer List</h1>
+                    {volunteerList.map((val, key)=> {
+                        return (
+                        <div key={key} className="volunteer"> 
+                            <h1>{val.volunteerName}</h1>
+                            <h1>{val.volunteerAge}</h1>
+                            <input type="text" placeholder="New Volunteer Name..." onChange={(event) => {
+                                setNewVolunteerName(event.target.value)}} />
+                            <button onClick={() => updateVolunteer(val._id)}> Update </button>
+                            <button> Delete </button>
+                        </div>
+                        )
+                        })}
                 </FormContent>
             </FormWrap>
         </Container>

@@ -52,7 +52,7 @@ export const FormContent = styled.div `
     padding-top: 100px;
     flex-direction: column;
     justify-content: center;
-
+    align-items: center;
     @media screen and (max-width: 480px) {
         padding: 10px;
     }
@@ -111,7 +111,7 @@ export const FormInput = styled.input `
 `;
 
 export const FormButton = styled.button `
-    background: #fff;
+    background: darkgray;
     padding: 16px 0;
     border: none;
     border-radius: 4px;

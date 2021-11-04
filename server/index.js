@@ -31,6 +31,33 @@ app.post('/insert', async(req, res) => {
     }
 });
 
+app.get('/read', async(req, res) => {
+    // VolunteerModel.find({$where: {volunteerName: "David"}})
+    VolunteerModel.find({}, (err, result) => {
+        if(err) {
+            res.send(err);
+        }
+
+        res.send(result);
+    })
+});
+
+app.put('/update', async(req, res) => {
+
+    const newVolunteerName = req.body.newVolunteerName;
+    const id = req.body.id;
+
+    try{
+       await VolunteerModel.findById(id, (err, updatedVolunteer) => {
+           updatedVolunteer.volunteerName = newVolunteerName
+           updatedVolunteer.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+
 app.listen(3001, ()=> {
     console.log("Server running on port 3001...");
 });
