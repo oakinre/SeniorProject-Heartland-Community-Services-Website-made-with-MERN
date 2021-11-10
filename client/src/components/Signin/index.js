@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { 
 Container, 
 FormContent,
@@ -13,6 +13,8 @@ Text
 } from './SigninElements'
 
 const SignIn = () => {
+    const[Username, setUsername] = useState("");
+
     return (
         <Container>
             <FormWrap>
@@ -21,7 +23,8 @@ const SignIn = () => {
                     <Form action="#">
                         <FormH1>Sign in to your account</FormH1>
                         <FormLabel htmlFor='for'>Email</FormLabel>
-                        <FormInput type='email' required />
+                        <FormInput type='email' placeholder="Enter Username..." onChange={(event) => {
+                                setUsername(event.target.value)}} />
                         <FormLabel htmlFor='for'>Password</FormLabel>
                         <FormInput type='password' required />
                         <FormButton type='submit'>Continue</FormButton>

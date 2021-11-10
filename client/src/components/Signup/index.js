@@ -19,7 +19,7 @@ Form2
 const SignUp = () => {
     const [volunteerName, setVolunteerName] = useState("");
     const [ages, setAges] = useState(0);
-    const[newVolunteerName, setNewVolunteerName] = useState('');
+    const[newVolunteerName, setNewVolunteerName] = useState("");
     const [volunteerList, setVolunteerList] = useState([]);
 
     useEffect(()=> {
@@ -36,9 +36,11 @@ const SignUp = () => {
     };
 
     const updateVolunteer = (id) => {
-        Axios.put("http://localhost:3001/update", {id: id,newVolunteerName: newVolunteerName})
-    }
-
+        Axios.put("http://localhost:3001/update", {id: id, newVolunteerName: newVolunteerName})
+    };
+    const deleteVolunteer = (id) => {
+        Axios.delete(`http://localhost:3001/delete/${id}`)
+    };
     return (
         <Container>
             <FormWrap>
@@ -86,7 +88,7 @@ const SignUp = () => {
                             <input type="text" placeholder="New Volunteer Name..." onChange={(event) => {
                                 setNewVolunteerName(event.target.value)}} />
                             <button onClick={() => updateVolunteer(val._id)}> Update </button>
-                            <button> Delete </button>
+                            <button onClick={() => deleteVolunteer(val._id)}> Delete </button>
                         </div>
                         )
                         })}
