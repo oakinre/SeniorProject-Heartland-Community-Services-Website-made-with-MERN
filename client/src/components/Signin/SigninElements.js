@@ -55,9 +55,9 @@ export const FormContent = styled.div `
 `;
 
 export const Form = styled.form `
-    background: #010101;
-    max-width: 400px;
-    height: auto;
+    background: #fff;
+    max-width: 500px;
+    height: ${({isSignup}) => (isSignup ? "650px" : "450px" )};
     width: 100%;
     z-index: 1;
     display: grid;
@@ -65,6 +65,7 @@ export const Form = styled.form `
     padding: 80px 32px;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.9);
+    
 
     @media screen and (max-width: 400px) {
         padding: 32px 32px;
@@ -72,9 +73,9 @@ export const Form = styled.form `
 `;
 
 export const FormH1 = styled.h1 `
-    margin-bottom: 40px;
-    color: #fff;
-    font-size: 20px;
+    margin-bottom: 32px;
+    color: #010101;
+    font-size: 30px;
     font-weight: 400;
     text-align: center;
 `;
@@ -82,7 +83,7 @@ export const FormH1 = styled.h1 `
 export const FormLabel = styled.label `
     margin-bottom: 8px;
     font-size: 14px;
-    color: #fff;
+    color: black;
 `;
 
 export const FormInput = styled.input `
@@ -90,6 +91,7 @@ export const FormInput = styled.input `
     margin-bottom: 32px;
     border: none;
     border-radius: 4px;
+    background-color: darkgrey;
 `;
 
 export const FormButton = styled.button `

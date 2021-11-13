@@ -11,18 +11,15 @@ FormInput,
 FormButton,
 Text
 } from './SigninElements'
-import {Avatar, Button, Grid, Typography} from '@material-ui/core'
+import {Avatar, Button, Paper, Grid, Typography} from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import useStyles from './styles'
 import Input from './Input'
 
 const SignIn = () => {
-    const [showPassword, setShowPassword] = useState(false)
+    const[Username, setUsername] = useState("");
     const classes = useStyles();
-
     const isSignup = true;
-
-    const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
     const handleSubmit = () => {
 
     };
@@ -34,22 +31,23 @@ const SignIn = () => {
             <FormWrap>
                 <Icon to="/">HFC</Icon>
                 <FormContent>
-                    <Form className={classes.form} onSubmit={handleSubmit} isSignup={isSignup}>
-
-                        <FormH1 color='#fff' fullWidth>{isSignup ? 'Sign Up' : 'Sign In'}</FormH1>
+                    <Form className={classes.form} onSubmit={handleSubmit}>
+                        <Avatar className={classes.avatar}>
+                            <LockOutlinedIcon />
+                        </Avatar>
+                        <Typography variant="h5" color='#fff'>{isSignup ? 'Sign Up' : 'Sign In'}</Typography>
                             <Grid container spacing ={2}>
                                 {
                                     isSignup && (
                                         <>
-                                            <Input name="firstName" label="First Name" handleChange ={handleChange} autoFocus half />
-                                            <Input name="lastName" label="Last Name"  handleChange ={handleChange} half/>
+                                                <FormLabel htmlFor='for'>First Name</FormLabel>
+                                                <FormInput name="firstName" placeholder="Enter First Name..." handleChange ={handleChange}/>
+                                                <FormLabel htmlFor='for'>First Name</FormLabel>
+                                                <FormInput name="firstName" placeholder="Enter First Name..." handleChange ={handleChange}/>
                                         </>
-                                )}
-                                <Input name= "email" label="Email Address" handleChange={handleChange} type="email"/>
-                                <Input name= "password" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword}/>
-                                { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
+                                    )
+                                }
                             </Grid>
-                            <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} >{isSignup ? 'Sign Up' : 'Sign In'}</Button>
                         {/* 
                         onChange={(event) => {setUsername(event.target.value)}} 
                         <FormLabel htmlFor='for'>Password</FormLabel>
