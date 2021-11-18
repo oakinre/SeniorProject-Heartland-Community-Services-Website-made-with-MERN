@@ -39,11 +39,13 @@ const SignIn = () => {
 
     const googleSuccess = async (res) => {
         console.log(res);
-    }
+    };
+
     const googleFailure = (error) => {
         console.log(error);
         console.log("Google Sign In was unsuccessful. Try Again Later");
-    }
+    };
+
     return (
         <Container>
             <FormWrap>
@@ -67,7 +69,7 @@ const SignIn = () => {
                             {/* <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} >{isSignup ? 'Sign Up' : 'Sign In'}</Button> */}
                             <FormButton type='submit' className={classes.submit} >{isSignup ? 'Sign Up' : 'Sign In'}</FormButton>
                              <GoogleLogin 
-                                clientId="623345783952-3p3u2suurvfb6f2ctglei84vc8p0e0ie.apps.googleusercontent.com"
+                                clientId="623345783952-1ct1aska925alqkq880h7f770u2g95oe.apps.googleusercontent.com"
                                 render={(renderProps) => (
                                     <Button className={classes.googleButton} color ='primary' fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />}  variant="contained">
                                         Google Sign In
@@ -75,7 +77,7 @@ const SignIn = () => {
                                 )}
                                 onSuccess={googleSuccess}
                                 onFailure={googleFailure}
-                                cookiePolicy="single_host_origin"
+                                cookiePolicy={'single_host_origin'}
                             />
                             <Grid container justify="flex-end">
                                 <Grid item>
