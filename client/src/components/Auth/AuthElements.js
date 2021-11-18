@@ -29,7 +29,7 @@ export  const FormWrap = styled.div `
     }
 `;
 
-export const Icon = styled(Link)`
+export const Iconz = styled(Link)`
     margin-left: 32px;
     margin-top: 32px;
     text-decoration: none;
@@ -62,7 +62,7 @@ export const Form = styled.form `
     z-index: 1;
     display: grid;
     margin: 0 auto;
-    padding: 80px 32px;
+    padding: 80px 32px 0px;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.9);
     
@@ -95,13 +95,21 @@ export const FormInput = styled.input `
 `;
 
 export const FormButton = styled.button `
+    width: 100%;
     background: #681A1A;
-    padding: 16px 0;
+    padding: 7px 0px;
+    margin-top: 18px;
+    margin-bottom: 18px;
     border: none;
     border-radius: 4px;
     color: #fff;
     font-size: 20px;
     cursor: pointer;
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: #101010;
+        color: #fff;
+    }
 `;
 
 export const Text = styled.span `
