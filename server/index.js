@@ -4,12 +4,13 @@ const cors = require('cors')
 const app = express();
 
 const VolunteerModel = require("./models/Volunteer");
+const AuthRoute = require("./routes/auth")
 
 app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-    "mongodb+srv://newuser:HCSproj2@hcs.xkws2.mongodb.net/volunteer?retryWrites=true&w=majority", 
+    "mongodb+srv://newuser:HCSProj1@hcs.xkws2.mongodb.net/volunteer?retryWrites=true&w=majority", 
     {
         useNewUrlParser: true,
     }
@@ -58,6 +59,14 @@ app.put('/update', async(req, res) => {
     }
 });
 
+app.delete("/delete/:id", async (req,res) => {
+    const id = req.params.id;
+    await VolunteerModel.findByIdAndRemove(id).exec()
+    res.send("deleted");
+});
+
 app.listen(3001, ()=> {
     console.log("Server running on port 3001...");
 });
+
+app.use('/api', AuthRoute)

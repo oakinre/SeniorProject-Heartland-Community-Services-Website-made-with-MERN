@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import {FaBars} from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib'
-import { animateScroll as scroll } from 'react-scroll'
+import { animateScroll as scroll, Button } from 'react-scroll'
+import {Avatar} from '@material-ui/core'
+import { Button2 } from '../ButtonElement'
 import {
     Nav, 
     NavbarContainer, 
@@ -33,6 +35,9 @@ const Navbar = ({ toggle }) => {
     const toggleHome = () => {
         scroll.scrollToTop()
     }
+
+    const user = null;
+
     return ( 
         <>
         <IconContext.Provider value = {{color: '#fff'}}>
@@ -55,10 +60,15 @@ const Navbar = ({ toggle }) => {
                         <NavItem>
                             <NavLinks to='services' smooth={true} duration={500} spy={true} exact='true' offset={-70}>Get Involved</NavLinks>
                         </NavItem>
-                    </NavMenu> 
+                    </NavMenu>
+                        {user ? (
+                        // <Avatar alt={user.result.name} src={user.result.imageUrl}>  {user.result.name.charAt(0)} </Avatar>
+                        <Button2>Logout</Button2>
+                        ) : (
                         <NavBtn>
-                            <NavBtnLink to ='/signin' >Sign In</NavBtnLink>
+                            <NavBtnLink to ='/auth'>Sign In</NavBtnLink>
                         </NavBtn>
+                        )} 
                 </NavbarContainer>
             </Nav>
         </IconContext.Provider>

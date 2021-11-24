@@ -1,8 +1,8 @@
 import React from 'react'
 import ScrollToTop from '../components/ScrollToTop'
-import SignIn from '../components/Signin'
+import SignIn from '../components/Auth'
 
-const SignInPage = () => {
+const Auth = () => {
     return (
     <>
         <ScrollToTop />
@@ -11,4 +11,4 @@ const SignInPage = () => {
     )
 }
 
-export default SignInPage
+export default Auth
