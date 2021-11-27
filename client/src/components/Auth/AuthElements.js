@@ -2,8 +2,11 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const Container = styled.div `
-    min-height: 692px;
-    position: fixed;
+    min-height: 100vh;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -19,19 +22,21 @@ export const Container = styled.div `
 `;
 
 export  const FormWrap = styled.div `
-    height: 100%;
-    display: flex;
+    margin-top: 30px;
+    height: 80%;
+    /* display: flex; */
     flex-direction: column;
     justify-content: center;
-
+    
     @media screen and (max-width: 400px) {
         height: 80%;
     }
 `;
 
 export const Iconz = styled(Link)`
-    margin-left: 32px;
+    margin-left: 15px;
     margin-top: 32px;
+    
     text-decoration: none;
     color: #fff;
     font-weight: 700;
@@ -40,10 +45,12 @@ export const Iconz = styled(Link)`
     @media screen and (max-width: 480px) {
         margin-left: 16px;
         margin-top: 8px;
+        
     }
 `;
 
 export const FormContent = styled.div `
+    padding-top: 40px;
     height: 100%;
     display: flex;
     flex-direction: column;

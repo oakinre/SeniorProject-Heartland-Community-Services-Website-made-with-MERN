@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                     <SidebarLink to='services' onClick={toggle} offset={-68}> Get Involved </SidebarLink>
                 </SidebarMenu>
                 <SideBtnWrap>
-                    <SidebarRouter to='/signin'>Sign In</SidebarRouter>
+                    <SidebarRouter to='/auth'>Sign In</SidebarRouter>
                 </SideBtnWrap>
             </SidebarWrapper>
         </SidebarContainer>

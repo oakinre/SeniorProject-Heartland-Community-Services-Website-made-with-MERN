@@ -18,35 +18,47 @@ import {Avatar, Button, Grid, Typography} from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import useStyles from './styles'
 import Input from './Input'
+import { signin, signup} from '../../actions/auth'
+import { useHistory } from 'react-router-dom';
 
-const SignIn = () => {
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
+
+const Auth = () => {
     const classes = useStyles();
     const [showPassword, setShowPassword] = useState(false)
     const [isSignup, setIsSignup] = useState(false);
+    const [formData, setFormData] = useState(initialState)
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData);
+        if(isSignup) {
+            dispatch(signup(formData, history))
+        }else {
+            dispatch(signin(formData, history))
+        }
     };
-    const handleChange =() => {
-
+    const handleChange =(e) => {
+        setFormData ({...formData, [e.target.name]: e.target.value});
     };
 
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
-        handleShowPassword(false);
+        setShowPassword(false);
     };
 
     const googleSuccess = async (res) => {
        const result = res?.profileOnj;
        const token = res?.tokenId;
 
-       try{
-            dispatch({type: 'AUTH', data: { result, token} });
-       } catch (error) {
-           console.log(error);
-       }
+    //    try{
+    //         dispatch({type: 'AUTH', data: { result, token} });
+    //    } catch (error) {
+    //        console.log(error);
+    //    }
     };
 
     const googleFailure = (error) => {
@@ -55,9 +67,9 @@ const SignIn = () => {
     };
 
     return (
-        <Container>
+        <Container component = "main">
+            <Iconz to="/">HFC</Iconz>
             <FormWrap>
-                <Iconz to="/">HFC</Iconz>
                 <FormContent>
                     <Form className={classes.form} onSubmit={handleSubmit} isSignup={isSignup}>
                         <FormH1 color='#fff' fullWidth>{isSignup ? 'Volunteer Sign Up' : 'Volunteer Sign In'}</FormH1>
@@ -110,4 +122,4 @@ const SignIn = () => {
     )
 }
 
-export default SignIn
+export default Auth
