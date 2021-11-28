@@ -1,8 +1,7 @@
 import React from 'react'
-import Icon1 from '../../images/svg-4.svg'
-import Icon2 from '../../images/svg-5.svg'
-import Icon3 from '../../images/svg-6.svg'
-import Icon4 from '../../images/svg-7.svg'
+import Icon1 from '../../images/partner.svg'
+import Icon2 from '../../images/volunteer.svg'
+import Icon3 from '../../images/give.svg'
 import { 
     ServiceContainer,
     ServicesH1,
@@ -10,7 +9,9 @@ import {
     ServicesCard,
     ServicesIcon,
     ServicesH2,
-    ServicesP
+    ServicesP,
+    ServicesLink1,
+    ServicesLink2
     } from './ServicesElements'
 
 const Services = () => {
@@ -19,24 +20,26 @@ const Services = () => {
             <ServicesH1>Get Involved</ServicesH1>
             <ServicesWrapper>
                 <ServicesCard>
+                    <ServicesH2>Partner</ServicesH2>
+                    <ServicesLink2 to= '/'>
                     <ServicesIcon src={Icon1} />
-                    <ServicesH2>Reduce Stuff</ServicesH2>
-                    <ServicesP>We help reduce stuff blah blah blah yada yada yada.</ServicesP>
+                    </ServicesLink2>
+                    <ServicesP>Corporate product donations aid in our mission to provide help and hope.</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
+                    <ServicesH2>Volunteer</ServicesH2>
+                    <ServicesLink2 to='/auth'>
                     <ServicesIcon src={Icon2} />
-                    <ServicesH2>Make Stuff</ServicesH2>
-                    <ServicesP>We help make stuff blah blah blah yada yada yada.</ServicesP>
+                    </ServicesLink2>
+                    <ServicesP>Love to help your community. Sign up for our next event.</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
+                    <ServicesH2>Give</ServicesH2>
+                    <ServicesLink1 href="https://pushpay.com/g/heartlandfamily" target="_blank" >
                     <ServicesIcon src={Icon3} />
-                    <ServicesH2>Write Stuff</ServicesH2>
-                    <ServicesP>We help write stuff blah blah blah yada yada yada.</ServicesP>
-                </ServicesCard>
-                <ServicesCard>
-                    <ServicesIcon src={Icon4} />
-                    <ServicesH2>ReadStuff</ServicesH2>
-                    <ServicesP>We help read stuff blah blah blah yada yada yada.</ServicesP>
+                    </ServicesLink1>
+                    <ServicesP>Your donations are 100% tax deductible and enable us to bring hope to our community.</ServicesP>
+                    
                 </ServicesCard>
             </ServicesWrapper>
         </ServiceContainer>

@@ -4,6 +4,7 @@ import { IconContext } from 'react-icons/lib'
 import { animateScroll as scroll, Button } from 'react-scroll'
 import {Avatar} from '@material-ui/core'
 import { Button2 } from '../ButtonElement'
+import img from '../../images/hcs.svg'
 import {
     Nav, 
     NavbarContainer, 
@@ -13,7 +14,9 @@ import {
     NavItem, 
     NavLinks,
     NavBtn,
-    NavBtnLink
+    NavBtnLink,
+    ImgWrap,
+    Img
 } from './NavbarElements'
 
 const Navbar = ({ toggle }) => {
@@ -43,7 +46,12 @@ const Navbar = ({ toggle }) => {
         <IconContext.Provider value = {{color: '#fff'}}>
             <Nav scrollNav={scrollNav} >
                 <NavbarContainer>
-                    <NavLogo to='/' onClick={toggleHome}> HCS </NavLogo>
+                    
+                    <NavLogo to='/' onClick={toggleHome}>  
+                    <ImgWrap>
+                    <Img src={img} alt="HCS"/>
+                    </ImgWrap>
+                    </NavLogo>
                     <MobileIcon onClick={toggle}>
                         <FaBars />
                     </MobileIcon>

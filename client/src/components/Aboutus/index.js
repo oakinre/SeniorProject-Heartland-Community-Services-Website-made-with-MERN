@@ -44,7 +44,7 @@ const Aboutus = ({
                         {/* <Heading lightText={lightText}>{headline}</Heading> */}
                         <Subtitle darkText={darkText}>{description}</Subtitle>
                         <Subtitle darkText={darkText}>{description2}</Subtitle>
-                        <BtnWrap>
+                        {/* <BtnWrap>
                             <Button2 to='home'
                             smooth={true}
                             duration={500}
@@ -55,7 +55,7 @@ const Aboutus = ({
                             dark = {dark ? 0 : 1}
                             big= {big ? 0 : 1}
                             >{buttonLabel}</Button2>
-                        </BtnWrap>
+                        </BtnWrap> */}
                     </TextWrapper>
                     {/* </Column1> */}
                     {/* <Column2>

@@ -130,3 +130,15 @@ export const NavBtnLink = styled(LinkRouter) `
     }
 `;
 
+export const Img = styled.img `
+    width: 100%;
+    margin: 15px 0 10px 10px;
+    padding-right: 0;
+    
+`
+export const ImgWrap = styled.div `
+    max-width: 150px;
+    height: 100%;
+    
+`
+

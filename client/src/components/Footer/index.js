@@ -29,38 +29,11 @@ const Footer = () => {
                 <FooterLinksContainer>
                     <FooterLinksWrapper>
                     <FooterLinkItems>
-                        <FooterLinkTitle>About Us</FooterLinkTitle>
-                            <FooterLink to="/signin">How it Works</FooterLink>
-                            <FooterLink to="/signin">Testimonials</FooterLink>
-                            <FooterLink to="/signin">Careers</FooterLink>
-                            <FooterLink to="/signin">Investors</FooterLink>
-                            <FooterLink to="/signin">Terms of Service</FooterLink>
-                    </FooterLinkItems>
-                    <FooterLinkItems>
-                        <FooterLinkTitle>About Us</FooterLinkTitle>
-                            <FooterLink to="/signin">How it Works</FooterLink>
-                            <FooterLink to="/signin">Testimonials</FooterLink>
-                            <FooterLink to="/signin">Careers</FooterLink>
-                            <FooterLink to="/signin">Investors</FooterLink>
-                            <FooterLink to="/signin">Terms of Service</FooterLink>
-                    </FooterLinkItems>
-                    </FooterLinksWrapper>
-                    <FooterLinksWrapper>
-                    <FooterLinkItems>
-                        <FooterLinkTitle>About Us</FooterLinkTitle>
-                            <FooterLink to="/signin">How it Works</FooterLink>
-                            <FooterLink to="/signin">Testimonials</FooterLink>
-                            <FooterLink to="/signin">Careers</FooterLink>
-                            <FooterLink to="/signin">Investors</FooterLink>
-                            <FooterLink to="/signin">Terms of Service</FooterLink>
-                    </FooterLinkItems>
-                    <FooterLinkItems>
-                        <FooterLinkTitle>About Us</FooterLinkTitle>
-                            <FooterLink to="/signin">How it Works</FooterLink>
-                            <FooterLink to="/signin">Testimonials</FooterLink>
-                            <FooterLink to="/signin">Careers</FooterLink>
-                            <FooterLink to="/signin">Investors</FooterLink>
-                            <FooterLink to="/signin">Terms of Service</FooterLink>
+                        <FooterLinkTitle>Sections</FooterLinkTitle>
+                        <FooterLink to='about' smooth={true} duration={500} spy={true} exact='true' offset={-70}>About Us</FooterLink>
+                            <FooterLink to='what' smooth={true} duration={500} spy={true} exact='true' offset={-70}>What We Do</FooterLink>
+                            <FooterLink to='events' smooth={true} duration={500} spy={true} exact='true' offset={-70}>Events</FooterLink>
+                            <FooterLink to='services' smooth={true} duration={500} spy={true} exact='true' offset={-70}>Get Involved</FooterLink>
                     </FooterLinkItems>
                     </FooterLinksWrapper>
                 </FooterLinksContainer>
@@ -69,22 +42,16 @@ const Footer = () => {
                         <SocialLogo to='/' onClick={toggleHome}>
                             HCS
                         </SocialLogo>
-                        <Copyrights> HFC © {new Date().getFullYear()} All rights reserved.</Copyrights>
+                        <Copyrights> HCS © {new Date().getFullYear()} All rights reserved.</Copyrights>
                         <SocialIcons>
                             <SocialIconsLink href="//www.facebook.com/pages/Heartland-Family-Church/732450293475286" target="_blank" aria-label="Facebook">
                                 <FaFacebook />
                             </SocialIconsLink>
-                            <SocialIconsLink href="/" target="_blank" aria-label="Instagram">
-                                <FaInstagram />
-                            </SocialIconsLink>
                             <SocialIconsLink href="//www.youtube.com/channel/UCM2hwliIfafsmomy8yQcp_Q/videos" target="_blank" aria-label="Youtube">
-                                <SocialIcon src={Icon1} />
+                                <FaYoutube />
                             </SocialIconsLink>
                             <SocialIconsLink href="//twitter.com/Heartlandfamily" target="_blank" aria-label="Twitter">
                                 <FaTwitter />
-                            </SocialIconsLink>
-                            <SocialIconsLink href="/" target="_blank" aria-label="Linkedin">
-                                <FaLinkedin />
                             </SocialIconsLink>
                         </SocialIcons>
                     </SocialsWrap>

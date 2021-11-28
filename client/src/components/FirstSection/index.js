@@ -25,14 +25,14 @@ const FirstSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </FirstBg>
             <FirstContent>
-                <FirstH1> To Help, To Serve, To Empower </FirstH1>
+                <FirstH1> Food for Hope. Essentials for Life. </FirstH1>
                 {/* <FirstH1> To Serve </FirstH1>
                 <FirstH1> To Empower </FirstH1> */}
-                <FirstPara>
+                {/* <FirstPara>
                 We are a nonprofit humanitarian organization with 
                 a mission to provide a hand up to children and families 
                 in need.
-                </FirstPara>
+                </FirstPara> */}
                 <FirstBtnWrap>
                     <Button 
                         to='services' 

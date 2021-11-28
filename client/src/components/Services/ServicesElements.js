@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { Link as LinkRouter } from 'react-router-dom'
 export const ServiceContainer = styled.div `
     min-height: 100vh;
     display: flex;
@@ -22,14 +22,14 @@ export const ServicesWrapper = styled.div `
     max-width: 1000px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     grid-gap: 16px;
     padding: 0 50px;
 
-    @media screen and (max-width: 1000px) {
+    /* @media screen and (max-width: 1000px) {
         grid-template-columns: 1fr 1fr;
-    }
+    } */
 
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
@@ -45,7 +45,7 @@ export const ServicesCard = styled.div `
     align-items: center;
     border-radius: 10px;
     max-height: 340px;
-    padding: 30px;
+    padding: 40px 30px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     transition: all 0.2s ease-in-out;
     &:hover {
@@ -81,3 +81,12 @@ export const ServicesP = styled.p `
     font-size: 1rem;
     text-align: center;
 `
+
+export const ServicesLink1 = styled.a `
+    color: #fff;
+    font-size: 24px;
+`;
+export const ServicesLink2 = styled(LinkRouter) `
+    color: #fff;
+    font-size: 24px;
+`;
