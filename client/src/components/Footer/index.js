@@ -1,6 +1,5 @@
 import React from 'react'
-import Icon1 from '../../images/svg-8.svg'
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { animateScroll as scroll } from 'react-scroll';
 import { 
 FooterContainer,

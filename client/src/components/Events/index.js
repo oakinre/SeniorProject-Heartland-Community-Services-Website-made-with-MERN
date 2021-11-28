@@ -1,49 +1,51 @@
-import React, {useEffect}, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {
     Column2, 
     Img, 
     ImgWrap, 
-    InfoContainer,
-    InfoWrapper,
-    InfoRow,
+    EventContainer,
+    EventWrapper,
+    EventRow,
+    TextWrapper,
     Column1,
     EventH1,
-    
     } from './EventElements'
+import img from '../../images/svg-1.svg'
+import Axios from 'axios'
+
 const Events = () => {
 
-    const [volunteerList, setVolunteerList] = useState([]);
+    const [eventList, setEventList] = useState([]);
+
     useEffect(()=> {
         Axios.get("http://localhost:3001/read").then((response)=>{
-            setVolunteerList(response.data);
+            setEventList(response.data);
         })
     }, []);
 
     return (
-        <InfoContainer lightBg={lightBg} id={id}>
-        <InfoWrapper>
-            <InfoRow imgStart={imgStart}>
+        <EventContainer>
+        <EventWrapper>
+            <EventRow >
                 <Column1>
                 <EventH1>Events</EventH1>
-                <TextWrapper>
-                    {volunteerList.map((val, key)=> {
+                
+                    {eventList.map((val, key)=> {
                         return (
-                        <div key={key} className="volunteer"> 
-                            <h1>{val.volunteerName}</h1>
-                            <h1>{val.volunteerAge}</h1>
+                        <div key={key} className="event"> 
+                            <h1>{val.eventName}  {val.eventDate}  {val.eventTime}</h1>
                             </div>
                         )
                         })}
-                </TextWrapper>
                 </Column1>
                 <Column2>
                     <ImgWrap>
-                        <Img src={img} alt={alt} />
+                        <Img src={img} alt='Car' />
                     </ImgWrap>
                 </Column2>
-            </InfoRow>
-        </InfoWrapper>
-    </InfoContainer>
+            </EventRow>
+        </EventWrapper>
+    </EventContainer>
             
     )
 }

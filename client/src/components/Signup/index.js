@@ -9,9 +9,7 @@ Form,
 FormH1,
 FormLabel,
 FormInput,
-FormButton,
-Text,
-Form2
+FormButton
 } from './SignupElements'
 
 
