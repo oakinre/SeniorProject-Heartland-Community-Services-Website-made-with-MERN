@@ -4,7 +4,7 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from './pages'
 import SignInPage from './pages/auth'
-import SignUpPage from './pages/signup';
+import EventsPage from './pages/event';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Switch>
         <Route path='/' component={Home} exact />
         <Route path='/auth' component={SignInPage} exact />
-        <Route path='/signup' component= {SignUpPage} exact />
+        <Route path='/event' component= {EventsPage} exact />
       </Switch>
     </Router>
   );

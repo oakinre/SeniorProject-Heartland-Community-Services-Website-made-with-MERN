@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const EventContainer = styled.div `
     color: #fff;
     background: #6B2929 ;
-    padding: 100px 0;
+    /* padding: 100px 0; */
     @media screen and (max-width: 768px) {
         padding: 125px 0;
     }
@@ -33,9 +33,12 @@ export const EventRow = styled.div `
 `
 
 export const Column1 = styled.div `
+    height: 70%;
+    width: 100%;
     margin-bottom: 15px;
     padding: 0 15px;
     grid-area: col1;
+    
 `
 
 export const Column2 = styled.div `
@@ -45,7 +48,8 @@ export const Column2 = styled.div `
 `
 
 export const TextWrapper = styled.div `
-    max-width: 540px;
+    /* max-width: 300px; */
+    font-size: 9px;
     padding-top: 0;
     padding-bottom: 60px;
 `
@@ -53,8 +57,8 @@ export const TextWrapper = styled.div `
 export const EventH1 = styled.h1 `
      font-size: 2.5rem;
      color: #fff;
-     margin-top: 20px;
-     margin-bottom: 150px;
+     margin-bottom: 30px;
+     text-decoration: underline 2px;
 
      @media screen and (max-width: 480px) {
          font-size: 2rem;

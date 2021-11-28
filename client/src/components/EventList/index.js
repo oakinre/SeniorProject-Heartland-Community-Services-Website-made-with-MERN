@@ -10,7 +10,7 @@ FormH1,
 FormLabel,
 FormInput,
 FormButton
-} from './SignupElements'
+} from './EventListElements'
 
 
 
@@ -82,15 +82,22 @@ const SignUp = () => {
                             <h1>Name: {val.eventName}</h1>
                             <h1>Date: {val.eventDate}</h1>
                             <h1>Time: {val.eventTime}</h1>
+                            <br />
                             <input type="text" placeholder="New Event Name..." onChange={(event) => {
                                 setNewEventName(event.target.value)}} />
                             <button onClick={() => updatedEventName(val._id)}> Update </button>
+                            <br />
+                            <br />
                             <input type="text" placeholder="New Event Date..." onChange={(event) => {
                                 setNewEventDate(event.target.value)}} />
                             <button onClick={() => updatedEventDate(val._id)}> Update </button>
+                            <br />
+                            <br />
                             <input type="text" placeholder="New Event Time..." onChange={(event) => {
                                 setNewEventTime(event.target.value)}} />
                             <button onClick={() => updatedEventTime(val._id)}> Update </button>
+                            <br />
+                            <br />
                             <button onClick={() => deleteEvent(val._id)}> Delete </button>
                         </div>
                         )

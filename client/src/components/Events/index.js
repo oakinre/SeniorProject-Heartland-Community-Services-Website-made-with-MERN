@@ -24,19 +24,25 @@ const Events = () => {
     }, []);
 
     return (
-        <EventContainer>
+        <EventContainer id = 'events'>
         <EventWrapper>
             <EventRow >
                 <Column1>
-                <EventH1>Events</EventH1>
-                
-                    {eventList.map((val, key)=> {
+                <EventH1>Upcoming Events</EventH1>
+                    <TextWrapper>
+                {eventList.map((val, key)=> {
                         return (
-                        <div key={key} className="event"> 
-                            <h1>{val.eventName}  {val.eventDate}  {val.eventTime}</h1>
-                            </div>
+                        <div key={key} className="event">
+                            <br />
+                            <h1>{val.eventName} &nbsp;&nbsp;{val.eventDate}&nbsp;&nbsp; {val.eventTime}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            
+                        </div>
                         )
                         })}
+                    </TextWrapper>
                 </Column1>
                 <Column2>
                     <ImgWrap>

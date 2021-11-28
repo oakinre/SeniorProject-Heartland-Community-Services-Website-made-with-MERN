@@ -1,14 +1,14 @@
 import React from 'react'
 import ScrollToTop from '../components/ScrollToTop'
-import SignUp from '../components/Signup'
+import Event from '../components/EventList'
 
-const SignUpPage = () => {
+const EventsPage = () => {
     return (
         <>
             <ScrollToTop />
-            <SignUp />
+            <Event />
         </>
     )
 }
 
-export default SignUpPage
+export default EventsPage
