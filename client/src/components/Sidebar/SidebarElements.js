@@ -95,3 +95,28 @@ export const SidebarRouter = styled(LinkRouter) `
         color: #fff;
     }
 `;
+export const NavItem2 = styled.li `
+    color: #fff;
+    padding: 0 10px;
+    height: 80px;
+`;
+export const NavItem3 = styled.li `
+    color: #fff;
+    font-weight:bold ;
+    padding: 5px 10px;
+    height: 80px;
+`;
+export const NavMenu2 = styled.ul `
+        display: flex;
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 20px;
+        align-items: center;
+        list-style: none;
+        text-align: center;
+        margin-right: -22px;
+
+    @media screen and (max-width: 980px) {
+        display: none;
+    }
+`;

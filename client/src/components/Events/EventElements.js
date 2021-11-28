@@ -5,7 +5,7 @@ export const EventContainer = styled.div `
     background: #6B2929 ;
     /* padding: 100px 0; */
     @media screen and (max-width: 768px) {
-        padding: 125px 0;
+        padding: 100px 0;
     }
 `
 
@@ -15,16 +15,16 @@ export const EventWrapper = styled.div `
     /* height: 1000px; */
     min-height: 100vh;
     width: 100%;
-    max-width: 1100px;
+    /* max-width: 1100px; */
     margin-right: auto;
     margin-left: auto;
-    padding: 0 24px;
+    padding: 150px 30px;
     justify-content: center;
 `
 export const EventRow = styled.div `
     display: grid;
     grid-auto-columns: minmax(auto, 1fr);
-    align-items: center;
+    /* align-items: center; */
     grid-template-areas: ${({imgStart}) => (imgStart ? `'col2 col1'` : `'col1 col2'`)};
 
     @media screen and (max-width: 768px) {
@@ -36,14 +36,15 @@ export const Column1 = styled.div `
     height: 70%;
     width: 100%;
     margin-bottom: 15px;
-    padding: 0 15px;
+    padding: 0 10px;
     grid-area: col1;
     
 `
 
 export const Column2 = styled.div `
+    height: 100%;
     margin-bottom: 15px;
-    padding: 0 15px;
+    padding: 0 10px;
     grid-area: col2;
 `
 

@@ -125,3 +125,27 @@ export const Text = styled.span `
     color: #fff;
     font-size: 14px;
 `;
+
+export const Img = styled.img `
+    width: 100%;
+    margin: 15px 0 10px 10px;
+    padding-right: 0;
+    
+`;
+export const ImgWrap = styled.div `
+    max-width: 150px;
+    height: 100%;
+    
+`;
+
+export const NavLogo = styled(Link)`
+    color: #fff;
+    justify-self: flex-start;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+    font-weight: bold;
+    text-decoration: none;
+`;

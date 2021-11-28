@@ -58,7 +58,7 @@ export const FirstH1 = styled.h1 `
     color: #fff;
     font-size: 48px;
     text-align: center;
-    max-width: 450px;
+    max-width: 500px;
     @media screen and (max-width: 768px) {
         font-size: 43px
     }

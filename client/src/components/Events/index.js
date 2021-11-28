@@ -10,7 +10,7 @@ import {
     Column1,
     EventH1,
     } from './EventElements'
-import img from '../../images/svg-1.svg'
+import img from '../../images/help.svg'
 import Axios from 'axios'
 
 const Events = () => {
@@ -34,7 +34,7 @@ const Events = () => {
                         return (
                         <div key={key} className="event">
                             <br />
-                            <h1>{val.eventName} &nbsp;&nbsp;{val.eventDate}&nbsp;&nbsp; {val.eventTime}</h1>
+                            <h2>{val.eventName} &nbsp;&nbsp;{val.eventDate}&nbsp;&nbsp; {val.eventTime}</h2>
                             <br />
                             <br />
                             <br />
@@ -47,6 +47,7 @@ const Events = () => {
                 <Column2>
                     <ImgWrap>
                         <Img src={img} alt='Car' />
+                        <h2>Have questions? Contact Us: info@heartland-community.com</h2>
                     </ImgWrap>
                 </Column2>
             </EventRow>

@@ -3,9 +3,12 @@ import {
 Container, 
 FormContent,
 Iconz,
+Img,
+ImgWrap,
 FormWrap, 
 Form,
 FormH1,
+NavLogo,
 FormLabel,
 FormInput,
 FormButton,
@@ -20,6 +23,7 @@ import useStyles from './styles'
 import Input from './Input'
 import { signin, signup} from '../../actions/auth'
 import { useHistory } from 'react-router-dom';
+import img from '../../images/hcs.svg'
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
 
@@ -50,25 +54,29 @@ const Auth = () => {
         setShowPassword(false);
     };
 
-    const googleSuccess = async (res) => {
-       const result = res?.profileOnj;
-       const token = res?.tokenId;
+    // const googleSuccess = async (res) => {
+    //    const result = res?.profileOnj;
+    //    const token = res?.tokenId;
 
-    //    try{
-    //         dispatch({type: 'AUTH', data: { result, token} });
-    //    } catch (error) {
-    //        console.log(error);
-    //    }
-    };
+    // //    try{
+    // //         dispatch({type: 'AUTH', data: { result, token} });
+    // //    } catch (error) {
+    // //        console.log(error);
+    // //    }
+    // };
 
-    const googleFailure = (error) => {
-        console.log(error);
-        console.log("Google Sign In was unsuccessful. Try Again Later");
-    };
+    // const googleFailure = (error) => {
+    //     console.log(error);
+    //     console.log("Google Sign In was unsuccessful. Try Again Later");
+    // };
 
     return (
         <Container component = "main">
-            <Iconz to="/">HFC</Iconz>
+            <NavLogo to='/'>
+            <ImgWrap>
+                    <Img src={img} alt="HCS"/>
+                </ImgWrap>
+            </NavLogo>
             <FormWrap>
                 <FormContent>
                     <Form className={classes.form} onSubmit={handleSubmit} isSignup={isSignup}>
@@ -88,7 +96,7 @@ const Auth = () => {
                             </Grid>
                             {/* <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} >{isSignup ? 'Sign Up' : 'Sign In'}</Button> */}
                             <FormButton type='submit' className={classes.submit} >{isSignup ? 'Sign Up' : 'Sign In'}</FormButton>
-                             <GoogleLogin 
+                             {/* <GoogleLogin 
                                 clientId="623345783952-1ct1aska925alqkq880h7f770u2g95oe.apps.googleusercontent.com"
                                 render={(renderProps) => (
                                     <Button className={classes.googleButton} color ='primary' fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />}  variant="contained">
@@ -98,7 +106,7 @@ const Auth = () => {
                                 onSuccess={googleSuccess}
                                 onFailure={googleFailure}
                                 cookiePolicy={'single_host_origin'}
-                            />
+                            /> */}
                             <Grid container justify="flex-end">
                                 <Grid item>
                                     <Button onClick={switchMode}>

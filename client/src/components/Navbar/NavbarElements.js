@@ -130,7 +130,7 @@ export const NavBtn = styled.nav `
     align-items: center;
     justify-content: left;
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 980px){
         display: none;
     }
 `;
