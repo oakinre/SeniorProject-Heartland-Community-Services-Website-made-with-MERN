@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require('cors')
 const app = express();
 
-const VolunteerModel = require("./models/Volunteer");
+const EventModel = require("./models/event");
 const AuthRoute = require("./routes/auth");
 const userRoutes = require("./routes/users.js");
 
@@ -30,13 +30,14 @@ mongoose.connect(
 
 app.post('/insert', async(req, res) => {
 
-    const volunteerName = req.body.volunteerName
-    const ages = req.body.ages
+    const eventName = req.body.eventName;
+    const date = req.body.date;
+    const time = req.body.time;
 
-    const volunteer = new VolunteerModel({volunteerName: volunteerName, volunteerAge: ages});
+    const event = new EventModel({eventName: eventName, eventDate: date, eventTime: time});
 
     try{
-        await volunteer.save();
+        await event.save();
         res.send("inserted data");
     } catch(err){
         console.log(err);
@@ -45,7 +46,7 @@ app.post('/insert', async(req, res) => {
 
 app.get('/read', async(req, res) => {
     // VolunteerModel.find({$where: {volunteerName: "David"}})
-    VolunteerModel.find({}, (err, result) => {
+    EventModel.find({}, (err, result) => {
         if(err) {
             res.send(err);
         }
@@ -54,15 +55,45 @@ app.get('/read', async(req, res) => {
     })
 });
 
-app.put('/update', async(req, res) => {
+app.put('/update1', async(req, res) => {
 
-    const newVolunteerName = req.body.newVolunteerName;
+    const newEventName = req.body.newEventName;
     const id = req.body.id;
 
     try{
-       await VolunteerModel.findById(id, (err, updatedVolunteer) => {
-           updatedVolunteer.volunteerName = newVolunteerName
-           updatedVolunteer.save();
+       await EventModel.findById(id, (err, updatedEvent) => {
+           updatedEvent.eventName = newEventName
+           updatedEvent.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+app.put('/update2', async(req, res) => {
+
+    const newEventDate = req.body.newEventDate;
+    const id = req.body.id;
+
+    try{
+       await EventModel.findById(id, (err, updatedEvent) => {
+           updatedEvent.eventDate = newEventDate
+           updatedEvent.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+app.put('/update3', async(req, res) => {
+
+    const newEventTime = req.body.newEventTime;
+    const id = req.body.id;
+
+    try{
+       await EventModel.findById(id, (err, updatedEvent) => {
+           updatedEvent.eventTime = newEventTime;
+           updatedEvent.save();
            res.send("update")
        })
     } catch(err){
@@ -72,7 +103,7 @@ app.put('/update', async(req, res) => {
 
 app.delete("/delete/:id", async (req,res) => {
     const id = req.params.id;
-    await VolunteerModel.findByIdAndRemove(id).exec()
+    await EventModel.findByIdAndRemove(id).exec()
     res.send("deleted");
 });
 

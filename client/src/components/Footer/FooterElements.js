@@ -56,6 +56,7 @@ export const FooterLinkTitle = styled.h1 `
 
 export const FooterLink = styled(LinkScroll) `
     color: #fff;
+    cursor: pointer;
     text-decoration: none;
     margin-bottom: 0.5rem;
     font-size: 14px;
