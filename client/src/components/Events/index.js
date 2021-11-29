@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {
     Column2, 
-    Img, 
-    ImgWrap, 
+    Img,  
     EventContainer,
     EventWrapper,
     EventRow,
@@ -34,7 +33,7 @@ const Events = () => {
                         return (
                         <div key={key} className="event">
                             <br />
-                            <h2>{val.eventName} &nbsp;&nbsp;{val.eventDate}&nbsp;&nbsp; {val.eventTime}</h2>
+                            <h1 style={{color: '#6B2929'}}>{val.eventName} &nbsp;&nbsp;{val.eventDate}&nbsp;&nbsp; {val.eventTime}</h1>
                             <br />
                             <br />
                             <br />
@@ -45,10 +44,8 @@ const Events = () => {
                     </TextWrapper>
                 </Column1>
                 <Column2>
-                    <ImgWrap>
-                        <Img src={img} alt='Car' />
-                        <h2>Have questions? Contact Us: info@heartland-community.com</h2>
-                    </ImgWrap>
+                    <Img src={img} alt='Car' />
+                    <h2>Have questions? Contact Us: info@heartland-community.com</h2>
                 </Column2>
             </EventRow>
         </EventWrapper>

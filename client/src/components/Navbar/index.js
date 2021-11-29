@@ -112,7 +112,11 @@ const Navbar = ({ toggle }) => {
                                 <Typography  variant="h6" >{user?.result.name}</Typography>
                                 </NavItem3>
                                 <NavItem2>
-                                <Button2 onClick={logout}>Logout</Button2>
+                                <Button2 
+                                primary = 'true'
+                                dark = 'true' 
+                                onClick={logout}
+                                >Logout</Button2>
                                 </NavItem2>
                                 </NavMenu2>
                             </div>

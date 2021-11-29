@@ -64,7 +64,8 @@ export const FormContent = styled.div `
 export const Form = styled.form `
     background: #fff;
     max-width: 500px;
-    height: ${({isSignup}) => (isSignup ? "650px" : "450px" )};
+    /* height: ${({isSignup}) => (isSignup ? "650px" : "450px" )}; */
+    height: fit-content;
     width: 100%;
     z-index: 1;
     display: grid;

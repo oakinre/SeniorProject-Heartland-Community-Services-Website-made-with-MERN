@@ -20,6 +20,9 @@ const userSchema = new Schema({
     },
     id: {
         type: String
+    },
+    verified: {
+        type: Boolean
     }
 }, {timestamps: true})
 

@@ -11,7 +11,7 @@ export const FirstContainer = styled.div `
     min-height: calc(100vh + 10px);
     position: relative;
     z-index: 1;
-    
+    overflow: hidden;
     :before {
         content: '';
         position: absolute;
