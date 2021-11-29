@@ -74,14 +74,17 @@ const SignUp = () => {
                                 setTime(event.target.value);
                             }} required />
                             <FormButton onClick={addToList} type='submit'>Add to Events List</FormButton>
-                    </Form>
-                    <h1>Events List</h1>
+                     <br />
+                    <h1 style={{color: '#fff'}}>
+                        <u>Events List</u>
+                        </h1>
                     {eventList.map((val, key)=> {
                         return (
-                        <div key={key} className="event"> 
-                            <h1>Name: {val.eventName}</h1>
-                            <h1>Date: {val.eventDate}</h1>
-                            <h1>Time: {val.eventTime}</h1>
+                        <div key={key} className="event">
+                             <br />
+                            <h1 style={{color: '#fff'}}>Name: {val.eventName}</h1>
+                            <h1 style={{color: '#fff'}}>Date: {val.eventDate}</h1>
+                            <h1 style={{color: '#fff'}}>Time: {val.eventTime}</h1>
                             <br />
                             <input type="text" placeholder="New Event Name..." onChange={(event) => {
                                 setNewEventName(event.target.value)}} />
@@ -102,6 +105,7 @@ const SignUp = () => {
                         </div>
                         )
                         })}
+                        </Form>
                 </FormContent>
             </FormWrap>
         </Container>

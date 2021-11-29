@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 import Aboutus from '../components/Aboutus'
 import {homeObjAbout} from '../components/Aboutus/Data'
 import Events from '../components/Events'
+import What from '../components/What'
 
 const Home = () => {
 
@@ -17,13 +18,14 @@ const Home = () => {
     const toggle = () => {
         setIsOpen(!isOpen)
     }
+    const imgStart = false;
     return (
         <>
             <Sidebar isOpen = {isOpen} toggle={toggle} />
             <Navbar toggle={toggle} /> 
             <FirstSection />
             <Aboutus {...homeObjAbout}/>
-            <InfoSection {...homeObjOne}/>
+            <What imgStart={imgStart}/>
             <Events />
             <Services />
             <Footer />

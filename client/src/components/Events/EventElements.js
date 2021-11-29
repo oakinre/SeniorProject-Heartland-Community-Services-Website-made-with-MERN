@@ -19,12 +19,13 @@ export const EventWrapper = styled.div `
     margin-right: auto;
     margin-left: auto;
     /* padding: 150px 30px; */
-    /* justify-content: center; */
+    /* justify-content: right; */
 `
 export const EventRow = styled.div `
     display: grid;
     grid-auto-columns: minmax(auto, 1fr);
-    /* align-items: center; */
+    /* justify-content: right;
+    align-items: right; */
     grid-template-areas: ${({imgStart}) => (imgStart ? `'col2 col1'` : `'col1 col2'`)};
 
     @media screen and (max-width: 768px) {
@@ -33,28 +34,38 @@ export const EventRow = styled.div `
 `
 
 export const Column1 = styled.div `
-    background-color: lightgrey;
+    background-color: #fff;
+    z-index:3;
     height: 100%;
-    width: 100%;
+    width: 120%;
+    /* margin-top: 30px; */
     margin-bottom: 15px;
     padding: 0 10px;
     grid-area: col1;
-    box-shadow: 25px 0px 7px rgba(0,0,0,0.2);
+    box-shadow: 25px 25px 7px rgba(0,0,0,0.2);
     text-align: center;
     padding: 200px 30px;
+    @media screen and (max-width: 768px) {
+         width: 100%;
+         margin-top: 0px;
+         box-shadow: 0px -10px 7px rgba(0,0,0,0.2);
+     }
     
 `
 
 export const Column2 = styled.div `
     height: 100%;
-    width: 100%;
+    width: 80%;
+    justify-self: right;
     margin-bottom: 15px;
     padding: 0 10px;
     text-align: center;
     
     padding: 220px 0px;
     grid-area: col2;
-    
+    @media screen and (max-width: 768px) {
+         justify-self: center;
+     }
 `
 
 export const TextWrapper = styled.div `
@@ -67,9 +78,10 @@ export const TextWrapper = styled.div `
 export const EventH1 = styled.h1 `
      font-size: 3.5rem;
      /* color: #fff; */
-     color: #6B2929;
+     color: #010101;
      margin-bottom: 30px;
-     text-decoration: underline 2px;
+     text-decoration: underline 3px;
+     text-decoration-color: #6B2929;
 
      @media screen and (max-width: 480px) {
          font-size: 2rem;

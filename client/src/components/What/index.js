@@ -1,8 +1,8 @@
 import React from 'react'
 import {
     Column2, 
-    Img, 
-    ImgWrap, 
+    FirstBg, 
+    VideoBg, 
     EventContainer,
     EventWrapper,
     EventRow,
@@ -11,35 +11,33 @@ import {
     EventH1,
     } from './WhatElements'
 import img from '../../images/help.svg'
+import Video from '../../video/video.mp4'
 
-const What = () => {
+const What = ({imgStart}) => {
 
     return (
-        <EventContainer id = 'events'>
+        <EventContainer id = 'what'>
         <EventWrapper>
-            <EventRow >
+            <EventRow imgStart={imgStart}>
                 <Column1>
-                <EventH1>Upcoming Events</EventH1>
-                    <TextWrapper>
-                {eventList.map((val, key)=> {
-                        return (
-                        <div key={key} className="event">
-                            <br />
-                            <h1 style={{color: '#6B2929'}}>{val.eventName} &nbsp;&nbsp;{val.eventDate}&nbsp;&nbsp; {val.eventTime}</h1>
-                            <br />
-                            <br />
-                            <br />
-                            
-                        </div>
-                        )
-                        })}
-                    </TextWrapper>
+                <EventH1>Food Distributions</EventH1>
+                        <ul>
+                        <TextWrapper>
+                        <h1 style={{color: 'grey'}}>Easy</h1>
+                        </TextWrapper>
+                        <TextWrapper>
+                        <h1 style={{color: 'grey'}}>Healthy</h1>
+                        </TextWrapper>
+                        <TextWrapper>
+                        <h1 style={{color: 'grey'}}>Quick</h1>
+                        </TextWrapper>
+                        <TextWrapper>
+                        <h1 style={{color: 'grey'}}>Drive Through</h1>
+                        </TextWrapper>
+                        </ul>
                 </Column1>
                 <Column2>
-                    <ImgWrap>
-                        <Img src={img} alt='Car' />
-                        <h2>Have questions? Contact Us: info@heartland-community.com</h2>
-                    </ImgWrap>
+                    <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
                 </Column2>
             </EventRow>
         </EventWrapper>

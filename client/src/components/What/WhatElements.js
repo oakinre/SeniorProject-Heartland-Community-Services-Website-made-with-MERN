@@ -25,7 +25,7 @@ export const EventRow = styled.div `
     display: grid;
     grid-auto-columns: minmax(auto, 1fr);
     /* align-items: center; */
-    grid-template-areas: ${({imgStart}) => (imgStart ? `'col2 col1'` : `'col1 col2'`)};
+    grid-template-areas: ${({imgStart}) => (imgStart ? `'col1 col2'` : `'col2 col1'`)};
 
     @media screen and (max-width: 768px) {
         grid-template-areas: ${({imgStart}) => (imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`)} ;
@@ -33,34 +33,45 @@ export const EventRow = styled.div `
 `
 
 export const Column1 = styled.div `
-    background-color: lightgrey;
-    height: 100%;
+    z-index: 1;
+    background-color: #fff;
+    height: 95%;
     width: 100%;
     margin-bottom: 15px;
     padding: 0 10px;
     grid-area: col1;
-    box-shadow: 25px 25px 7px rgba(0,0,0,0.2);
+    box-shadow: -18px 0px 7px rgba(0,0,0,0.2);
     text-align: center;
     padding: 200px 30px;
+    @media screen and (max-width: 768px) {
+         width: 100%;
+         height: 100%;
+         box-shadow: 0px 10px 7px rgba(0,0,0,0.2);
+         
+     }
     
 `
 
 export const Column2 = styled.div `
-    height: 100%;
-    width: 100%;
+    z-index: 0;
+    height: 95%;
+    width: 120%;
     margin-bottom: 15px;
-    padding: 0 10px;
-    text-align: center;
-    padding: 200px 200px;
-    grid-area: col2;
+    /* padding: 0 10px; */
     
+    grid-area: col2;
+    @media screen and (max-width: 768px) {
+         width: 100%;
+         height: 150%;
+     }
 `
 
 export const TextWrapper = styled.div `
     /* max-width: 300px; */
-    font-size: 9px;
+    font-size: 20px;
+    /* margin-bottom: 20px; */
     padding-top: 0;
-    padding-bottom: 60px;
+    padding-bottom: 10px;
 `
 
 export const EventH1 = styled.h1 `
@@ -85,3 +96,21 @@ export const Img = styled.img `
     margin: 0 0 10px 0;
     padding-right: 0;
 `
+export const VideoBg = styled.video `
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    background: #232a34;
+`;
+
+export const FirstBg = styled.div `
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+`;
