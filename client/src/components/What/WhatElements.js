@@ -4,9 +4,6 @@ export const EventContainer = styled.div `
     color: #fff;
     background: #6B2929 ;
     /* padding: 100px 0; */
-    @media screen and (max-width: 768px) {
-        padding: 100px 0;
-    }
 `
 
 export const EventWrapper = styled.div `
@@ -38,15 +35,15 @@ export const Column1 = styled.div `
     height: 95%;
     width: 100%;
     margin-bottom: 15px;
-    padding: 0 10px;
     grid-area: col1;
     box-shadow: -18px 0px 7px rgba(0,0,0,0.2);
     text-align: center;
     padding: 150px 30px;
     @media screen and (max-width: 768px) {
-         width: 100%;
-         height: 100%;
-         box-shadow: 0px 10px 7px rgba(0,0,0,0.2);
+        margin-bottom: 0px;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 10px 7px rgba(0,0,0,0.4);
          
      }
     

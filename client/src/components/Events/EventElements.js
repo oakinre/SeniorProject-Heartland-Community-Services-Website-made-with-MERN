@@ -48,7 +48,7 @@ export const Column1 = styled.div `
     @media screen and (max-width: 768px) {
          width: 100%;
          margin-top: 0px;
-         box-shadow: 0px -10px 7px rgba(0,0,0,0.2);
+         box-shadow: 0px -10px 7px rgba(0,0,0,0.4);
      }
     
 `

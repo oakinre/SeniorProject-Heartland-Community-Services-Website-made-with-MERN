@@ -12,8 +12,8 @@ export const InfoBorder = styled.div `
     height: fit-content;
     justify-content: center;
     @media screen and (max-width: 768px) {
-        /* padding: 30px 30px; */
-        height: fit-content;
+        padding-bottom: 60px;
+        
     }
 `
 export const InfoContainer = styled.div `

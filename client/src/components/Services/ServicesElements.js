@@ -64,11 +64,11 @@ export const ServicesIcon = styled.img `
 
 export const ServicesH1 = styled.h1 `
      font-size: 3.5rem;
-     text-decoration: underline;
+     /* text-decoration: underline 7px; */
      color: #fff;
      margin-top: 100px;
      margin-bottom: 200px;
-
+     text-shadow: -10px 10px 0px rgba(0,0,0,0.2);
      @media screen and (max-width: 480px) {
          font-size: 2rem;
          
