@@ -50,7 +50,7 @@ export const Column1 = styled.div `
          
      }
     
-`
+`;
 
 export const Column2 = styled.div `
     z-index: 0;
@@ -64,7 +64,7 @@ export const Column2 = styled.div `
          width: 100%;
          height: 150%;
      }
-`
+`;
 
 export const TextWrapper = styled.div `
     /* max-width: 300px; */
@@ -72,7 +72,7 @@ export const TextWrapper = styled.div `
     /* margin-bottom: 20px; */
     padding-top: 0;
     padding-bottom: 10px;
-`
+`;
 
 export const EventH1 = styled.h1 `
      font-size: 3.5rem;
@@ -84,12 +84,12 @@ export const EventH1 = styled.h1 `
      @media screen and (max-width: 480px) {
          font-size: 2rem;
      }
-`
+`;
 export const ImgWrap = styled.div `
     max-width: 555px;
     height: 100%;
     
-`
+`;
 
 export const Img = styled.img `
     width: 100%;
