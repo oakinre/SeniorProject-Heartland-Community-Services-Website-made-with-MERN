@@ -4,8 +4,9 @@ export const EventContainer = styled.div `
     color: #fff;
     background: #6B2929 ;
     /* padding: 100px 0; */
+    padding-bottom: 100px;
     @media screen and (max-width: 768px) {
-        
+        padding-bottom: 0px;
     }
 `
 

@@ -3,8 +3,8 @@ import {
     SubContainer,
     SubItems,
     SubH1,
-    SubH2
-} from 'SubscriptElements'
+    SubH3
+} from './SubscriptElements'
 
 import { Button } from '../ButtonElement'
 
@@ -13,11 +13,9 @@ const Subscript = () => {
         <>
         <SubContainer>
             <SubItems>
-                <SubH1>
-                    <SubH2>
-                        <Input /><Button type='submit'/>
-                    </SubH2>
-                </SubH1>
+                <SubH1>Let's Make a Difference.</SubH1>
+                <SubH3>Receive updates about upcoming events and opportunities.</SubH3>
+                <Button>Press Me.</Button>
             </SubItems>
         </SubContainer>
             
