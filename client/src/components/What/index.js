@@ -9,8 +9,12 @@ import {
     TextWrapper,
     Column1,
     EventH1,
+    Img,
     } from './WhatElements'
-import img from '../../images/help.svg'
+import img from '../../images/house.svg'
+import img2 from '../../images/leaf.svg'
+import img3 from '../../images/clock.svg'
+import img4 from '../../images/car.svg'
 import Video from '../../video/video.mp4'
 
 const What = ({imgStart}) => {
@@ -25,15 +29,19 @@ const What = ({imgStart}) => {
                         <TextWrapper>
                         <h1 style={{color: 'grey'}}>Easy</h1>
                         </TextWrapper>
+                        <Img src={img} alt='House' />
                         <TextWrapper>
                         <h1 style={{color: 'grey'}}>Healthy</h1>
                         </TextWrapper>
+                        <Img src={img2} alt='Leaf' />
                         <TextWrapper>
                         <h1 style={{color: 'grey'}}>Quick</h1>
                         </TextWrapper>
+                        <Img src={img3} alt='Clock' />
                         <TextWrapper>
                         <h1 style={{color: 'grey'}}>Drive Through</h1>
                         </TextWrapper>
+                        <Img src={img4} alt='Car' />
                         </ul>
                 </Column1>
                 <Column2>

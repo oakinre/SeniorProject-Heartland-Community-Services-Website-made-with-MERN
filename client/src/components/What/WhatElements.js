@@ -42,7 +42,7 @@ export const Column1 = styled.div `
     grid-area: col1;
     box-shadow: -18px 0px 7px rgba(0,0,0,0.2);
     text-align: center;
-    padding: 200px 30px;
+    padding: 150px 30px;
     @media screen and (max-width: 768px) {
          width: 100%;
          height: 100%;
@@ -77,12 +77,13 @@ export const TextWrapper = styled.div `
 export const EventH1 = styled.h1 `
      font-size: 3.5rem;
      /* color: #fff; */
-     color: #6B2929;
+     color: #6B2929; 
      margin-bottom: 30px;
-     text-decoration: underline 2px;
-
+     /* text-decoration: underline 3px;
+     text-decoration-color: #6B2929; */
+     text-shadow:-3px 5px 0px rgba(0,0,0,0.2);
      @media screen and (max-width: 480px) {
-         font-size: 2rem;
+         font-size: 3rem;
      }
 `
 export const ImgWrap = styled.div `
@@ -93,6 +94,7 @@ export const ImgWrap = styled.div `
 
 export const Img = styled.img `
     width: 100%;
+    max-width: 75px;
     margin: 0 0 10px 0;
     padding-right: 0;
 `

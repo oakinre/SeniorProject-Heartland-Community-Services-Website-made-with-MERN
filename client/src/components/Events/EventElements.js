@@ -39,12 +39,12 @@ export const Column1 = styled.div `
     height: 100%;
     width: 120%;
     /* margin-top: 30px; */
-    margin-bottom: 15px;
-    padding: 0 10px;
+    /* margin-bottom: 15px; */
+    /* padding: 0 10px; */
     grid-area: col1;
     box-shadow: 25px 25px 7px rgba(0,0,0,0.2);
     text-align: center;
-    padding: 200px 30px;
+    padding: 200px 0px;
     @media screen and (max-width: 768px) {
          width: 100%;
          margin-top: 0px;
@@ -80,11 +80,12 @@ export const EventH1 = styled.h1 `
      /* color: #fff; */
      color: #010101;
      margin-bottom: 30px;
-     text-decoration: underline 3px;
-     text-decoration-color: #6B2929;
+     /* text-decoration: underline 3px;
+     text-decoration-color: #6B2929; */
+     text-shadow:-3px 5px 0px rgba(0,0,0,0.2);
 
      @media screen and (max-width: 480px) {
-         font-size: 2rem;
+         font-size: 3rem;
      }
 `
 
