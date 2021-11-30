@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {MdKeyboardArrowRight, MdArrowForward} from 'react-icons/md'
 
 export const SubContainer = styled.footer`
     background-color: #fff;
@@ -18,7 +19,7 @@ export const SubItems = styled.div `
 
 export const SubH1 = styled.h1 `
     color: #681A1A;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Montserrat;
     font-weight: bold;
     font-size: 3.5rem;
     padding-bottom: 20px;
@@ -28,11 +29,33 @@ export const SubH1 = styled.h1 `
 `
 export const SubH3 = styled.h3 `
     color: #010101;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     font-weight: bold;
     font-size: 1.2rem;
     max-width: 600px;
-    @media screen and (max-width: 768px) {
-        font-size: .7rem;
-    }
+`
+export const Subscribe = styled.form `
+    min-width: 400px;
+    justify-content: left;
+   padding-right: 60px;
+`;
+
+export const EmailInput = styled.input `
+    z-index: 1;
+    padding: 15px 36px;
+    margin-bottom: 32px;
+    outline: none;
+    border: solid 2px;
+    border-color: grey transparent grey grey;
+    border-radius: 1px;
+    background-color: white;
+`;
+export const ArrowForward = styled(MdArrowForward) `
+    /* margin-left: 8px; */
+    /* font-size: 20px; */
+`;
+
+export const ArrowRight = styled(MdKeyboardArrowRight) `
+    margin-left: 8px;
+    font-size: 20px;
 `

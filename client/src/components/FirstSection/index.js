@@ -26,13 +26,6 @@ const FirstSection = () => {
             </FirstBg>
             <FirstContent>
                 <FirstH1> Food for Hope. Essentials for Life. </FirstH1>
-                {/* <FirstH1> To Serve </FirstH1>
-                <FirstH1> To Empower </FirstH1> */}
-                {/* <FirstPara>
-                We are a nonprofit humanitarian organization with 
-                a mission to provide a hand up to children and families 
-                in need.
-                </FirstPara> */}
                 <FirstBtnWrap>
                     <Button 
                         to='services' 
