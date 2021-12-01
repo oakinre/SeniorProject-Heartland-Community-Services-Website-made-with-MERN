@@ -377,33 +377,69 @@ const Auth = () => {
                                 </div>
                                 <FormLabel>Are you available for setup (arrive earlier): </FormLabel>
                                 <div className="validSetup">
-                                    <FormInput type="checkbox" required="required" id="yes1" name="Setup" value="true" checked={isChecked1} onChange={e => twoCalls1(e)} />Yes
-                                    <FormInput type="checkbox" required="required" id="no1" name="Setup" value="false" checked={isCheckedNo1} onChange={e => twoCalls1(e)} />No
+                                    <FormInput type="checkbox" required= {
+                                        isChecked1 ? "required" : null
+                                    } 
+                                    id="yes1" name="Setup" value="true" checked={isChecked1} onChange={e => twoCalls1(e,0)} />Yes
+                                    <FormInput type="checkbox" required= {
+                                        !isChecked1 ? "required" : null
+                                    } 
+                                    id="no1" name="Setup" value="false" checked={isCheckedNo1} onChange={e => twoCalls1(e,1)} />No
                                 </div>
                                 <FormLabel>Are you over 18: </FormLabel>
                                 <div className="valid18">
-                                    <FormInput type="checkbox" required="required" id="yes2" name="OverEighteen" value="true" checked={isChecked2} onChange={e => twoCalls2(e)} />Yes
-                                    <FormInput type="checkbox" required="required" id="no2" name="OverEighteen" value="false" checked={isCheckedNo2} onChange={e => twoCalls2(e)}/>No
+                                    <FormInput type="checkbox" required= {
+                                        isChecked2 ? "required" : null
+                                    } 
+                                    id="yes2" name="OverEighteen" value="true" checked={isChecked2} onChange={e => twoCalls2(e,0)} />Yes
+                                    <FormInput type="checkbox" required= {
+                                        !isChecked2 ? "required" : null
+                                    } 
+                                    id="no2" name="OverEighteen" value="false" checked={isCheckedNo2} onChange={e => twoCalls2(e,1)}/>No
                                 </div>
                                 <FormLabel>Monthly Availability for {whatMonth(new Date().getMonth())}: </FormLabel>
                                 <h6>Can update for future months once account is created</h6>
                                 <br/>
                                 <div>
                                 <FormLabel2>Week 1: </FormLabel2>
-                                    <FormInput type="checkbox" id="yes3" name="yes" value="true" checked={isChecked3} onChange={handleOnChange3}/>Yes
-                                    <FormInput type="checkbox" id="no3" name="no" value="false" checked={isCheckedNo3} onChange={handleOnChange3}/>No
+                                    <FormInput type="checkbox" required= {
+                                        isChecked3 ? "required" : null
+                                    }
+                                    id="yes3" name="yes" value="true" checked={isChecked3} onChange={e => twoCalls3(e,0)}/>Yes
+                                    <FormInput type="checkbox" required= {
+                                        !isChecked3 ? "required" : null
+                                    }
+                                    id="no3" name="no" value="false" checked={isCheckedNo3} onChange={e => twoCalls3(e,1)}/>No
                                 <br/>
                                 <FormLabel2>Week 2: </FormLabel2>
-                                <FormInput type="checkbox" id="yes4" name="yes" value="true" checked={isChecked4} onChange={handleOnChange4}/>Yes
-                                <FormInput type="checkbox" id="no4" name="no" value="false" checked={isCheckedNo4} onChange={handleOnChange4}/>No
+                                <FormInput type="checkbox" required= {
+                                        isChecked4 ? "required" : null
+                                    }
+                                    id="yes4" name="yes" value="true" checked={isChecked4} onChange={e => twoCalls4(e,0)}/>Yes
+                                <FormInput type="checkbox" required= {
+                                        !isChecked4 ? "required" : null
+                                    }
+                                    id="no4" name="no" value="false" checked={isCheckedNo4} onChange={e => twoCalls4(e,1)}/>No
                                 <br/>
                                 <FormLabel2>Week 3: </FormLabel2>
-                                <FormInput type="checkbox" id="yes5" name="yes" value="true" checked={isChecked5} onChange={handleOnChange5}/>Yes
-                                <FormInput type="checkbox" id="no5" name="no" value="false" checked={isCheckedNo5} onChange={handleOnChange5}/>No
+                                <FormInput type="checkbox" required= {
+                                        isChecked5 ? "required" : null
+                                    }
+                                    id="yes5" name="yes" value="true" checked={isChecked5} onChange={e => twoCalls5(e,0)}/>Yes
+                                <FormInput type="checkbox" required= {
+                                        !isChecked5 ? "required" : null
+                                    }
+                                    id="no5" name="no" value="false" checked={isCheckedNo5} onChange={e => twoCalls5(e,1)}/>No
                                 <br/>
                                 <FormLabel2>Week 4: </FormLabel2>
-                                <FormInput type="checkbox" id="yes6" name="yes" value="true" checked={isChecked6} onChange={handleOnChange6}/>Yes
-                                <FormInput type="checkbox" id="no6" name="no" value="false" checked={isCheckedNo6} onChange={handleOnChange6}/>No
+                                <FormInput type="checkbox" required= {
+                                        isChecked6 ? "required" : null
+                                    }
+                                    id="yes6" name="yes" value="true" checked={isChecked6} onChange={e => twoCalls6(e,0)}/>Yes
+                                <FormInput type="checkbox" required= {
+                                        !isChecked6 ? "required" : null
+                                    }
+                                    id="no6" name="no" value="false" checked={isCheckedNo6} onChange={e => twoCalls6(e,1)}/>No
                                 </div>
                                 </InfoContainer>
                                 </>
