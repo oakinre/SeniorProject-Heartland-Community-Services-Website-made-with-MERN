@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
-
-const secret = 'test';
+const JWT_SECRET= "2389th230g23pf13809g123pogb32108gpn23ogh3208gn23-9gh3028ghdsafdasf321dsa54";
+const secret = JWT_SECRET;
 
 const auth = async (req, res, next) => {
   try {

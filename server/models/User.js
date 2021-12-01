@@ -8,22 +8,25 @@ const userSchema = new Schema({
     },
     email: {
         type: String,
-        required: true
+        trim: true,
+        required: true,
+        unique: true
     },
     // phone: {
     //     type: String
     // },
     password: {
         type: String,
-        required: true
+        required: true,
+        min: 5
 
     },
     id: {
         type: String
     },
-    verified: {
-        type: Boolean
-    }
+    // verified: {
+    //     type: Boolean
+    // }
 }, {timestamps: true})
 
 const user = mongoose.model("User", userSchema)

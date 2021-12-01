@@ -97,8 +97,6 @@ const Auth = () => {
                                 isSignup && (
                                 <>
                                 <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />
-                                <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />
-                                <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />
                                 </>
                                 )}
                             </Grid>
