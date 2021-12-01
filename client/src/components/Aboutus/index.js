@@ -1,18 +1,11 @@
 import React from 'react'
-import { Button2 } from '../ButtonElement'
 import {
-Column2, 
-Img, 
-ImgWrap, 
 InfoContainer,
 InfoWrapper,
 InfoRow,
-Column1,
 TextWrapper,
 TopLine,
-Heading,
 Subtitle,
-BtnWrap,
 InfoBorder
 } from './AboutusElements'
 
@@ -21,17 +14,9 @@ const Aboutus = ({
     id, 
     imgStart, 
     topLine, 
-    lightText, 
-    headline, 
     darkText, 
     description,
     description2, 
-    buttonLabel, 
-    img, 
-    alt,
-    primary,
-    dark,
-    big
 }) => {
     return (
     <InfoBorder id={id}>

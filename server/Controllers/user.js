@@ -96,6 +96,22 @@ const signin = async (req, res) => {
     }
 }
 
+const me = async (req, res) => {
+  const user = await User.findOne({ email: req.user });
+
+  return res.json({
+    errors: [],
+    data: {
+      user: {
+        id: user._id,
+        email: user.email,
+        name: user.name,
+        password: user.password
+      },
+    },
+  });
+}
+
 module.exports = {
-    signin, signup
+    signin, signup, me
 }

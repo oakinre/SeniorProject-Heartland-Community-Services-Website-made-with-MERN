@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {
     SubContainer,
     SubItems,
@@ -6,18 +6,13 @@ import {
     SubH3,
     EmailInput,
     Subscribe,
-    ArrowForward,
-    ArrowRight
+    ArrowForward
 } from './SubscriptElements'
 
 import { Button3 } from '../ButtonElement'
 
 const Subscript = () => {
-    const [hover, setHover] = useState(false)
 
-    const onHover = () => {
-        setHover(!hover)
-    }
     return (
         <>
         <SubContainer>

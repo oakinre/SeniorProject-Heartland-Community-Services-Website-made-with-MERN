@@ -7,14 +7,16 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { reducers } from './reducers';
 import thunk from 'redux-thunk';
-
+import { UserProvider } from './context';
 
 const store = createStore(reducers, {}, compose(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+    <UserProvider>
+      <App />
+    </UserProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

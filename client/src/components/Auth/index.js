@@ -2,23 +2,17 @@ import React, {useState} from 'react'
 import { 
 Container, 
 FormContent,
-Iconz,
 Img,
 ImgWrap,
 FormWrap, 
 Form,
 FormH1,
 NavLogo,
-FormLabel,
-FormInput,
-FormButton,
-Text
+FormButton
 } from './AuthElements'
-import { GoogleLogin } from 'react-google-login'
+// import { GoogleLogin } from 'react-google-login'
 import { useDispatch } from 'react-redux'
-import Icon from './Icon'
-import {Avatar, Button, Grid, Typography} from '@material-ui/core'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
+import {Button, Grid} from '@material-ui/core'
 import useStyles from './styles'
 import Input from './Input'
 import { signin, signup} from '../../actions/auth'
@@ -43,6 +37,7 @@ const Auth = () => {
             dispatch(signup(formData, history))
         }else {
             dispatch(signin(formData, history))
+            
         }
     };
     const handleChange =(e) => {
@@ -113,7 +108,7 @@ const Auth = () => {
                                 onFailure={googleFailure}
                                 cookiePolicy={'single_host_origin'}
                             /> */}
-                            <Grid container justify="flex-end">
+                            <Grid container justifyContent="flex-end">
                                 <Grid item>
                                     <Button onClick={switchMode}>
                                         {isSignup ? 'Already have an account? Sign In' : "Don't Have an account? Sign Up"}

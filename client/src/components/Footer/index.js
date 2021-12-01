@@ -14,8 +14,7 @@ SocialsWrap,
 SocialLogo,
 SocialIcons,
 SocialIconsLink,
-Copyrights,
-SocialIcon
+Copyrights
 } from './FooterElements'
 
 const toggleHome = () => {

@@ -2,8 +2,6 @@ import React, {useState} from 'react'
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
 import FirstSection from '../components/FirstSection'
-import InfoSection from '../components/InfoSection'
-import { homeObjOne, homeObjTwo} from '../components/InfoSection/Data'
 import Services from '../components/Services'
 import Footer from '../components/Footer'
 import Aboutus from '../components/Aboutus'
@@ -12,9 +10,8 @@ import Events from '../components/Events'
 import What from '../components/What'
 import Subscript from '../components/Subscript'
 const Home = () => {
-
+    
     const [isOpen, setIsOpen] = useState(false)
-
     const toggle = () => {
         setIsOpen(!isOpen)
     }

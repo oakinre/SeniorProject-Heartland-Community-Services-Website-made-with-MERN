@@ -12,7 +12,7 @@ import {
     NavItem3,
     NavMenu2
 } from './SidebarElements'
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import {useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 import * as actionType from '../../constants/actionTypes';
@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                     <SidebarLink to='events' onClick={toggle} offset={-68}> Events </SidebarLink>
                     <SidebarLink to='services' onClick={toggle} offset={-68}> Get Involved </SidebarLink>
                 </SidebarMenu>
-                {user ?.result ? (
+                {user?.result ? (
                             <div >
                                 <NavMenu2>
                                 <NavItem2>

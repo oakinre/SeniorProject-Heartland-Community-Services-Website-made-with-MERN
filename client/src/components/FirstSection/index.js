@@ -7,7 +7,6 @@ FirstBg,
 VideoBg,
 FirstContent,
 FirstH1,
-FirstPara,
 FirstBtnWrap,
 ArrowForward,
 ArrowRight

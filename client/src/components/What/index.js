@@ -1,7 +1,6 @@
 import React from 'react'
 import {
-    Column2, 
-    FirstBg, 
+    Column2,  
     VideoBg, 
     EventContainer,
     EventWrapper,

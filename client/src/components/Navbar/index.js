@@ -3,9 +3,9 @@ import {FaBars} from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib'
 import { animateScroll as scroll} from 'react-scroll'
 import {Avatar, Typography} from '@material-ui/core'
-import { Button2 } from '../ButtonElement'
+import { Button4 } from '../ButtonElement'
 import img from '../../images/hcs.svg'
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import {useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 import * as actionType from '../../constants/actionTypes';
@@ -102,7 +102,7 @@ const Navbar = ({ toggle }) => {
                         </NavItem>
                     </NavMenu>
                     
-                        {user ?.result ? (
+                        {user?.result ? (
                             <div >
                                 <NavMenu2>
                                 <NavItem2>
@@ -112,11 +112,11 @@ const Navbar = ({ toggle }) => {
                                 <Typography  variant="h6" >{user?.result.name}</Typography>
                                 </NavItem3>
                                 <NavItem2>
-                                <Button2 
+                                <Button4 
                                 primary = 'true'
                                 dark = 'true' 
                                 onClick={logout}
-                                >Logout</Button2>
+                                >Logout</Button4>
                                 </NavItem2>
                                 </NavMenu2>
                             </div>
