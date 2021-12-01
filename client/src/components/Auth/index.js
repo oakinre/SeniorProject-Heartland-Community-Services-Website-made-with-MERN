@@ -46,7 +46,7 @@ const Auth = () => {
             }
         }
         if(val === 1){
-            if(isCheckedNo){
+            if(isChecked){
                 setIsCheckedNo(!isCheckedNo);
                 setIsChecked(false);
             }else{
@@ -66,7 +66,7 @@ const Auth = () => {
             }
         }
         if(val === 1){
-            if(isCheckedNo1){
+            if(isChecked1){
                 setIsCheckedNo1(!isCheckedNo1);
                 setIsChecked1(false);
             }else{
@@ -86,7 +86,7 @@ const Auth = () => {
             }
         }
         if(val === 1){
-            if(isCheckedNo2){
+            if(isChecked2){
                 setIsCheckedNo2(!isCheckedNo2);
                 setIsChecked2(false);
             }else{
@@ -106,7 +106,7 @@ const Auth = () => {
             }
         }
         if(val === 1){
-            if(isCheckedNo3){
+            if(isChecked3){
                 setIsCheckedNo3(!isCheckedNo3);
                 setIsChecked3(false);
             }else{
@@ -127,7 +127,7 @@ const Auth = () => {
             }
         }
         if(val === 1){
-            if(isCheckedNo){
+            if(isChecked4){
                 setIsCheckedNo4(!isCheckedNo4);
                 setIsChecked4(false);
             }else{
@@ -147,7 +147,7 @@ const Auth = () => {
             }
         }
         if(val === 1){
-            if(isCheckedNo5){
+            if(isChecked5){
                 setIsCheckedNo5(!isCheckedNo5);
                 setIsChecked5(false);
             }else{
@@ -159,7 +159,7 @@ const Auth = () => {
   const [isCheckedNo6, setIsCheckedNo6] = useState(false);
     const handleOnChange6 = (val) => {
         if(val === 0){
-            if(isCheckedNo){
+            if(isCheckedNo6){
                 setIsChecked6(!isChecked6);
                 setIsCheckedNo6(false);
             }else{
@@ -167,7 +167,7 @@ const Auth = () => {
             }
         }
         if(val === 1){
-            if(isCheckedNo){
+            if(isChecked6){
                 setIsCheckedNo6(!isCheckedNo6);
                 setIsChecked6(false);
             }else{
