@@ -103,6 +103,13 @@ export const FormLabel = styled.label `
     font-size: 20px;
     color: black;
 `;
+export const FormLabel2 = styled.label `
+    width: 50%;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: black;
+`;
 
 export const FormInput = styled.input `
     /* padding: 16px 16px; */

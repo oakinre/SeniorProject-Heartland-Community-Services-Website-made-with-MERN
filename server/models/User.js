@@ -24,17 +24,21 @@ const userSchema = new Schema({
     id: {
         type: String
     },
-    area: {
-        type: String
+    AOI: {
+        type: String,
+        required: true
     },
     CDL: {
-        type: Boolean
+        type: Boolean,
+        required: true
     },
     Setup: {
-        type: Boolean
+        type: Boolean,
+        required: true
     },
     OverEighteen: {
-        type: Boolean
+        type: Boolean,
+        required: true
     }
     // verified: {
     //     type: Boolean
