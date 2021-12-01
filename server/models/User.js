@@ -24,6 +24,18 @@ const userSchema = new Schema({
     id: {
         type: String
     },
+    area: {
+        type: String
+    },
+    CDL: {
+        type: Boolean
+    },
+    Setup: {
+        type: Boolean
+    },
+    OverEighteen: {
+        type: Boolean
+    }
     // verified: {
     //     type: Boolean
     // }

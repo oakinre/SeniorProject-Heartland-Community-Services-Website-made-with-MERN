@@ -7,8 +7,17 @@ ImgWrap,
 FormWrap, 
 Form,
 FormH1,
+FormH2,
 NavLogo,
-FormButton
+FormButton,
+DropDownContainer,
+DropDownHeader,
+DropDownList,
+DropDownListContainer,
+ListItem,
+FormLabel,
+FormInput,
+InfoContainer
 } from './AuthElements'
 // import { GoogleLogin } from 'react-google-login'
 import { useDispatch } from 'react-redux'
@@ -20,8 +29,39 @@ import { useHistory } from 'react-router-dom';
 import img from '../../images/hcs.svg'
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
+const options = ["Food Distribution", "Prayer Group"]
 
 const Auth = () => {
+    //Checkboxes
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleOnChange = () => {
+        setIsChecked(!isChecked);
+  };
+  const [isChecked1, setIsChecked1] = useState(false);
+
+    const handleOnChange1 = () => {
+        setIsChecked1(!isChecked1);
+  };
+  const [isChecked2, setIsChecked2] = useState(false);
+
+    const handleOnChange2 = () => {
+        setIsChecked2(!isChecked2);
+  };
+    /*********************************************************************************/
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedOption, setSelectedOption] = useState(null);
+  
+    const toggling = () => setIsOpen(!isOpen);
+  
+    const onOptionClicked = value => () => {
+      setSelectedOption(value);
+      setIsOpen(false);
+      console.log(value);
+    };
+
+  /***********************************************************************************/
+
     const classes = useStyles();
     const [showPassword, setShowPassword] = useState(false)
     const [isSignup, setIsSignup] = useState(false);
@@ -92,7 +132,45 @@ const Auth = () => {
                                 isSignup && (
                                 <>
                                 <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />
+                                <FormH2 color='#fff' fullWidth>Volunteer Info</FormH2>
+                                <FormLabel>Area of Interest: </FormLabel>
+                                <DropDownContainer>
+                                    <DropDownHeader onClick={toggling}>
+                                    {selectedOption || "Food Distribution"}
+                                    </DropDownHeader>
+                                    {isOpen && (
+                                    <DropDownListContainer>
+                                        <DropDownList>
+                                        {options.map(option => (
+                                            <ListItem onClick={onOptionClicked(option)} key={Math.random()}>
+                                            {option}
+                                            </ListItem>
+                                        ))}
+                                        </DropDownList>
+                                    </DropDownListContainer>
+                                    )}
+                                </DropDownContainer>
+                                <InfoContainer>
+                                <FormLabel>Do you have a valid TX CDL License: </FormLabel>
+                                
+                                <div className="validCDL">
+                                    <FormInput type="checkbox" id="yes" name="yes" value="true" checked={isChecked} onChange={handleOnChange}/>Yes
+                                    <FormInput type="checkbox" id="no" name="no" value="false" checked={!isChecked} onChange={handleOnChange}/>No
+                                </div>
+                                <FormLabel>Are you available for setup (arrive earlier): </FormLabel>
+                                <div className="validSetup">
+                                    <FormInput type="checkbox" id="yes1" name="yes" value="true" checked={isChecked1} onChange={handleOnChange1}/>Yes
+                                    <FormInput type="checkbox" id="no1" name="no" value="false" checked={!isChecked1} onChange={handleOnChange1}/>No
+                                </div>
+                                <FormLabel>Over 18 or Under 18: </FormLabel>
+                                <div className="valid18">
+                                    <FormInput type="checkbox" id="yes2" name="yes" value="true" checked={isChecked2} onChange={handleOnChange2}/>Yes
+                                    <FormInput type="checkbox" id="no2" name="no" value="false" checked={!isChecked2} onChange={handleOnChange2}/>No
+                                </div>
+                                <FormLabel>Monthly Availability: </FormLabel>
+                                </InfoContainer>
                                 </>
+                                
                                 )}
                             </Grid>
                             {/* <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} >{isSignup ? 'Sign Up' : 'Sign In'}</Button> */}

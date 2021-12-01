@@ -52,7 +52,7 @@ const signin = async (req, res) => {
         };
       });
 
-      return res.json({ errors, data: null });
+      return res.status(400).json({ errors, data: null });
     }
     
     const { email, password, confirmPassword, firstName, lastName } = req.body;

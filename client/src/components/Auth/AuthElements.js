@@ -87,19 +87,43 @@ export const FormH1 = styled.h1 `
     font-weight: 400;
     text-align: center;
 `;
+export const FormH2 = styled.h2 `
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    color: #010101;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+`;
 
 export const FormLabel = styled.label `
+    align-items: center;
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 20px;
     color: black;
 `;
 
 export const FormInput = styled.input `
-    padding: 16px 16px;
+    /* padding: 16px 16px; */
     margin-bottom: 32px;
     border: none;
     border-radius: 4px;
     background-color: darkgrey;
+    font-size: 5px;
+    width: 8%;
+    line-height: 1.7;
+    cursor: pointer;
+    /* width: 50%; */
+`;
+export const FormInput2 = styled.select `
+    padding: 16px 16px;
+    margin-left: 30px;
+    margin-bottom: 32px;
+    border: none;
+    border-radius: 4px;
+    border: darkgrey solid 1px;
+    background-color: #fff;
 `;
 
 export const FormButton = styled.button `
@@ -149,4 +173,63 @@ export const NavLogo = styled(Link)`
     margin-left: 0px;
     font-weight: bold;
     text-decoration: none;
+`;
+
+export const DropDownContainer = styled.div`
+  width: 10.5em;
+  margin: 0 auto;
+`;
+
+export const DropDownHeader = styled.div`
+  /* margin-bottom: 0.8em; */
+  padding: 0.4em 0em 0.4em 0.7em;
+  border: darkgrey solid 1px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  font-size: 1rem;
+  color: #010101;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const DropDownListContainer = styled.div`
+  position: absolute;
+  z-index: 100;
+  width: 10.5em;
+`;
+
+export const DropDownList = styled.ul`
+  padding: 0;
+  margin: 0;
+  padding-left: 1em;
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+  box-sizing: border-box;
+  color: #010101;
+  font-size: 1rem;
+  font-weight: 500;
+  &:first-child {
+    padding-top: 0.8em;
+  }
+`;
+
+export const ListItem = styled.li`
+  list-style: none;
+  margin-bottom: 0.8em;
+  &:hover {
+    color: #fd9e46;
+    cursor: pointer;
+  }
+`;
+
+export const InfoContainer= styled.div `
+    padding-top: 40px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (max-width: 480px) {
+        padding: 10px;
+    }
 `;
