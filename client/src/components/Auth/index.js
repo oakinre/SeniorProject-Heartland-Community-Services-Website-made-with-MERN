@@ -276,11 +276,27 @@ const Auth = () => {
         handleChange2(e);
     }
     const twoCalls1 = (e,val) => {
-        handleOnChange1();
+        handleOnChange1(val);
         handleChange2(e);
     }
     const twoCalls2 = (e,val) => {
-        handleOnChange2();
+        handleOnChange2(val);
+        handleChange2(e);
+    }
+    const twoCalls3 = (e,val) => {
+        handleOnChange3(val);
+        handleChange2(e);
+    }
+    const twoCalls4 = (e,val) => {
+        handleOnChange4(val);
+        handleChange2(e);
+    }
+    const twoCalls5 = (e,val) => {
+        handleOnChange5(val);
+        handleChange2(e);
+    }
+    const twoCalls6 = (e,val) => {
+        handleOnChange6(val);
         handleChange2(e);
     }
 
