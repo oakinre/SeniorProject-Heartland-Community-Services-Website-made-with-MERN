@@ -121,5 +121,5 @@ const me = async (req, res) => {
 }
 
 module.exports = {
-    signin, signup, me
+    signin, signup, me, User
 }

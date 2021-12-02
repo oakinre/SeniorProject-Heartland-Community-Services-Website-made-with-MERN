@@ -218,13 +218,21 @@ const Auth = () => {
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
         setShowPassword(false);
+        setShowPassword(false);
         setIsChecked(false);
+        setIsCheckedNo(false);
         setIsChecked1(false);
+        setIsCheckedNo1(false);
         setIsChecked2(false);
+        setIsCheckedNo2(false);
         setIsChecked3(false);
+        setIsCheckedNo3(false);
         setIsChecked4(false);
+        setIsCheckedNo4(false);
         setIsChecked5(false);
+        setIsCheckedNo5(false);
         setIsChecked6(false);
+        setIsCheckedNo6(false);
         setSelectedOption("Food Distribution")
     };
     const whatMonth = (value) =>{

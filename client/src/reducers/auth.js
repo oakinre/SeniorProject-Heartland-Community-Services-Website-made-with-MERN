@@ -15,6 +15,7 @@ const authReducer = (state = { authData: null }, action) => {
       localStorage.setItem('WeekThree',JSON.parse(localStorage.getItem('profile')).result.WeekThree);
       localStorage.setItem('WeekFour',JSON.parse(localStorage.getItem('profile')).result.WeekFour);
       localStorage.setItem('Name',JSON.parse(localStorage.getItem('profile')).result.name);
+      localStorage.setItem('Email',JSON.parse(localStorage.getItem('profile')).result.email);
       
     
       return { ...state, authData: action.data, loading: false, errors: null };

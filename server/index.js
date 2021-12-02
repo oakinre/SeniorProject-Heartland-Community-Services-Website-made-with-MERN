@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
 const app = express();
+const {User} = require("./Controllers/user");
 const EventModel = require("./models/event");
 const AuthRoute = require("./routes/auth");
 const userRoutes = require("./routes/users.js");
@@ -44,8 +45,19 @@ app.post('/insert', async(req, res) => {
 });
 
 app.get('/read', async(req, res) => {
-    // VolunteerModel.find({$where: {volunteerName: "David"}})
+    
     EventModel.find({}, (err, result) => {
+        if(err) {
+            res.send(err);
+        }
+
+        res.send(result);
+    })
+});
+
+app.get('/read2', async(req, res) => {
+    let params = req.query.name;
+    User.find({name: params}, (err, result) => {
         if(err) {
             res.send(err);
         }
