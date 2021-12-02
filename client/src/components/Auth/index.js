@@ -29,7 +29,7 @@ import { signin, signup} from '../../actions/auth'
 import { useHistory } from 'react-router-dom';
 import img from '../../images/hcs.svg'
 
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '', AOI: '', CDL: false, Setup: false, OverEighteen: false  }
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '', AOI: '', CDL: false, Setup: false, OverEighteen: false, WeekOne: "false", WeekTwo: "false", WeekThree: "false", WeekFour: "false"}
 const options = ["Food Distribution", "Prayer Group"]
 
 const Auth = () => {
@@ -405,9 +405,9 @@ const Auth = () => {
                                     <FormInput type="checkbox" required= {
                                         isChecked3 ? "required" : null
                                     }
-                                    id="yes3" name="yes" value="true" checked={isChecked3} onChange={e => twoCalls3(e,0)}/>Yes
+                                    id="yes3" name="WeekOne" value="true" checked={isChecked3} onChange={e => twoCalls3(e,0)}/>Yes
                                     <FormInput type="checkbox" required= {
-                                        !isChecked3 ? "required" : null
+                                        !isChecked3 ? "WeekOne" : null
                                     }
                                     id="no3" name="no" value="false" checked={isCheckedNo3} onChange={e => twoCalls3(e,1)}/>No
                                 <br/>
@@ -415,31 +415,31 @@ const Auth = () => {
                                 <FormInput type="checkbox" required= {
                                         isChecked4 ? "required" : null
                                     }
-                                    id="yes4" name="yes" value="true" checked={isChecked4} onChange={e => twoCalls4(e,0)}/>Yes
+                                    id="yes4" name="WeekTwo" value="true" checked={isChecked4} onChange={e => twoCalls4(e,0)}/>Yes
                                 <FormInput type="checkbox" required= {
                                         !isChecked4 ? "required" : null
                                     }
-                                    id="no4" name="no" value="false" checked={isCheckedNo4} onChange={e => twoCalls4(e,1)}/>No
+                                    id="no4" name="WeekTwo" value="false" checked={isCheckedNo4} onChange={e => twoCalls4(e,1)}/>No
                                 <br/>
                                 <FormLabel2>Week 3: </FormLabel2>
                                 <FormInput type="checkbox" required= {
                                         isChecked5 ? "required" : null
                                     }
-                                    id="yes5" name="yes" value="true" checked={isChecked5} onChange={e => twoCalls5(e,0)}/>Yes
+                                    id="yes5" name="WeekThree" value="true" checked={isChecked5} onChange={e => twoCalls5(e,0)}/>Yes
                                 <FormInput type="checkbox" required= {
                                         !isChecked5 ? "required" : null
                                     }
-                                    id="no5" name="no" value="false" checked={isCheckedNo5} onChange={e => twoCalls5(e,1)}/>No
+                                    id="no5" name="WeekThree" value="false" checked={isCheckedNo5} onChange={e => twoCalls5(e,1)}/>No
                                 <br/>
                                 <FormLabel2>Week 4: </FormLabel2>
                                 <FormInput type="checkbox" required= {
                                         isChecked6 ? "required" : null
                                     }
-                                    id="yes6" name="yes" value="true" checked={isChecked6} onChange={e => twoCalls6(e,0)}/>Yes
+                                    id="yes6" name="WeekFour" value="true" checked={isChecked6} onChange={e => twoCalls6(e,0)}/>Yes
                                 <FormInput type="checkbox" required= {
                                         !isChecked6 ? "required" : null
                                     }
-                                    id="no6" name="no" value="false" checked={isCheckedNo6} onChange={e => twoCalls6(e,1)}/>No
+                                    id="no6" name="WeekFour" value="false" checked={isCheckedNo6} onChange={e => twoCalls6(e,1)}/>No
                                 </div>
                                 </InfoContainer>
                                 </>

@@ -39,7 +39,23 @@ const userSchema = new Schema({
     OverEighteen: {
         type: Boolean,
         required: true
-    }
+    },
+    WeekOne: {
+        type: Boolean,
+        required:true
+    },
+    WeekTwo: {
+        type: Boolean,
+        required:true
+    },
+    WeekThree: {
+        type: Boolean,
+        required:true
+    },
+    WeekFour: {
+        type: Boolean,
+        required:true
+    },
     // verified: {
     //     type: Boolean
     // }
