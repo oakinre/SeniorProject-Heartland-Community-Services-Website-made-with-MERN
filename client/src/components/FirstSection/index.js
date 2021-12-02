@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Video from '../../video/video.mp4'
+import Video from '../../video/videoHCS.mp4'
 import { Button } from '../ButtonElement'
 import { 
 FirstContainer,

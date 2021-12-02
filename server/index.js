@@ -56,8 +56,8 @@ app.get('/read', async(req, res) => {
 });
 
 app.get('/read2', async(req, res) => {
-    let params = req.query.name;
-    User.find({name: params}, (err, result) => {
+    let params = req.query.id;
+    User.find({_id: params}, (err, result) => {
         if(err) {
             res.send(err);
         }

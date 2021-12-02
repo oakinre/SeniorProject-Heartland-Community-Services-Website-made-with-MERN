@@ -9,7 +9,7 @@ export const EventContainer = styled.div `
 export const EventWrapper = styled.div `
     display: grid;
     z-index: 1;
-    /* height: 1000px; */
+    /* height: 1500px; */
     min-height: 100vh;
     width: 100%;
     /* max-width: 1100px; */

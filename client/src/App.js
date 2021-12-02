@@ -1,5 +1,4 @@
-import React, {useContext} from 'react'
-import { UserContext } from './context'
+import React from 'react'
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from './pages'
@@ -9,8 +8,7 @@ import EventsPage from './pages/event';
 
 
 function App() {
-  const [state, setState] = useContext(UserContext);
-  console.log(state,'nav')
+  
   return (
     <Router>
       <Switch>

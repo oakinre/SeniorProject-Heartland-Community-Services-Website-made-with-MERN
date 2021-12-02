@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
+import { UserContext } from '../../context'
 import Axios from 'axios'
 import { 
 Container, 
@@ -30,25 +31,57 @@ import Input from './Input'
 import { signin, signup} from '../../actions/auth'
 import { useHistory } from 'react-router-dom';
 import img from '../../images/hcs.svg'
+import mongoose from 'mongoose'
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '', AOI: 'Food Distribution', CDL: false, Setup: false, OverEighteen: false, WeekOne: "false", WeekTwo: "false", WeekThree: "false", WeekFour: "false"}
 const options = ["Food Distribution", "Prayer Group"]
 
 const AccountPage = () => {
+    //User Info
     const [eventList, setEventList] = useState([]);
-    const name = localStorage.getItem('Name');
-    console.log(name)
-    useEffect(()=> {
-        Axios.get("http://localhost:3001/read2", {params: {name: name}}).then((response)=>{
+    const id = JSON.parse(localStorage.getItem('profile')).result._id;
+    useEffect(()=>{
+        Axios.get("http://localhost:3001/read2", {params: {id: id}}).then((response)=>{
             setEventList(response.data);
-        })
-    }, []);
-
+            localStorage.setItem('CurrentCDL', response.data["0"].CDL === true)
+            
+        }) 
+        }, []);
+        
+    
+    const [state, setState] = useContext(UserContext);
+    console.log(state)
+    
+    
+    console.log(id)
+    
+    
+    // const loading = () => {
+    //     if(state["loading"] === true){
+    //         setTimeout(loading, 100);
+    //         return
+    //     }else if(state["loading"] === false){
+    //     console.log(state["loading"],'nav')
+    //     var CDL = ((state["loading"] === true) ? false : true)
+        
+    //     return(CDL)
+    //     }
+    // }
     
 
+    
+    var CDL = ( localStorage.getItem('CurrentCDL') === 'true')
+    var Setup = (localStorage.getItem('CurrentSetup') === 'true')
+    var OverEighteen = (localStorage.getItem('CurrentOverEighteen') === 'true')
+    var WeekOne = (localStorage.getItem('CurrentWeekOne') === 'true')
+    var WeekTwo = (localStorage.getItem('CurrentWeekTwo') === 'true')
+    var WeekThree = (localStorage.getItem('CurrentWeekThree') === 'true')
+    var WeekFour = (localStorage.getItem('CurrentWeekFour') === 'true')
+
     //Checkboxes
-    const [isChecked, setIsChecked] = useState(false);
-    const [isCheckedNo, setIsCheckedNo] = useState(false);
+    const [isChecked, setIsChecked] = useState(CDL);
+    const [isCheckedNo, setIsCheckedNo] = useState(!CDL);
+    
     const handleOnChange = (val) => {
         if(val === 0){
             if(isCheckedNo){
@@ -67,8 +100,8 @@ const AccountPage = () => {
             }
         }
   };
-  const [isChecked1, setIsChecked1] = useState(false);
-  const [isCheckedNo1, setIsCheckedNo1] = useState(false);
+  const [isChecked1, setIsChecked1] = useState(Setup);
+  const [isCheckedNo1, setIsCheckedNo1] = useState(!Setup);
     const handleOnChange1 = (val) => {
         if(val === 0){
             if(isCheckedNo1){
@@ -87,8 +120,8 @@ const AccountPage = () => {
             }
         }
   };
-  const [isChecked2, setIsChecked2] = useState(false);
-  const [isCheckedNo2, setIsCheckedNo2] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(OverEighteen);
+  const [isCheckedNo2, setIsCheckedNo2] = useState(!OverEighteen);
     const handleOnChange2 = (val) => {
         if(val === 0){
             if(isCheckedNo2){
@@ -107,8 +140,8 @@ const AccountPage = () => {
             }
         }
   };
-  const [isChecked3, setIsChecked3] = useState(false);
-  const [isCheckedNo3, setIsCheckedNo3] = useState(false);
+  const [isChecked3, setIsChecked3] = useState(WeekOne);
+  const [isCheckedNo3, setIsCheckedNo3] = useState(!WeekOne);
     const handleOnChange3 = (val) => {
         if(val === 0){
             if(isCheckedNo3){
@@ -127,8 +160,8 @@ const AccountPage = () => {
             }
         }
   };
-  const [isChecked4, setIsChecked4] = useState(false);
-  const [isCheckedNo4, setIsCheckedNo4] = useState(false);
+  const [isChecked4, setIsChecked4] = useState(WeekTwo);
+  const [isCheckedNo4, setIsCheckedNo4] = useState(!WeekTwo);
 
     const handleOnChange4 = (val) => {
         if(val === 0){
@@ -148,8 +181,8 @@ const AccountPage = () => {
             }
         }
   };
-  const [isChecked5, setIsChecked5] = useState(false);
-  const [isCheckedNo5, setIsCheckedNo5] = useState(false);
+  const [isChecked5, setIsChecked5] = useState(WeekThree);
+  const [isCheckedNo5, setIsCheckedNo5] = useState(!WeekThree);
     const handleOnChange5 = (val) => {
         if(val === 0){
             if(isCheckedNo5){
@@ -168,8 +201,8 @@ const AccountPage = () => {
             }
         }
   };
-  const [isChecked6, setIsChecked6] = useState(false);
-  const [isCheckedNo6, setIsCheckedNo6] = useState(false);
+  const [isChecked6, setIsChecked6] = useState(WeekFour);
+  const [isCheckedNo6, setIsCheckedNo6] = useState(!WeekFour);
     const handleOnChange6 = (val) => {
         if(val === 0){
             if(isCheckedNo6){
@@ -320,13 +353,13 @@ const AccountPage = () => {
                                 <Input name="firstName" label="First Name" handleChange ={handleChange} autoFocus half />
                                 <Input name="lastName" label="Last Name"  handleChange ={handleChange} half/>
                                 <Input name= "email" label={val.email} handleChange={handleChange} type="email" disabled={true}/>
-                                </div>
-                            )})}
+                                
+                            
                                 <FormH2 color='#fff' fullWidth>Volunteer Info</FormH2>
                                 <FormLabel>Area of Interest: </FormLabel>
                                 <DropDownContainer>
                                     <DropDownHeader onClick={toggling}>
-                                    {selectedOption || "Food Distribution"}
+                                    {selectedOption || val.AOI}
                                     </DropDownHeader>
                                     {isOpen && (
                                     <DropDownListContainer>
@@ -340,6 +373,8 @@ const AccountPage = () => {
                                     </DropDownListContainer>
                                     )}
                                 </DropDownContainer>
+                                </div>
+                            )})}
                                 <InfoContainer>
                                 <FormLabel>Do you have a valid TX CDL License: </FormLabel>
                                 
