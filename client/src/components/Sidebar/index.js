@@ -57,7 +57,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                     <SidebarLink to='events' onClick={toggle} offset={-68}> Events </SidebarLink>
                     <SidebarLink to='services' onClick={toggle} offset={-68}> Get Involved </SidebarLink>
                     {user?.result ? (
-                        <SidebarLink to='/auth' onClick={toggle} offset={-68}> Account Info </SidebarLink>
+                    <SidebarLink to='/auth' onClick={toggle} offset={-68}> Account Info </SidebarLink>
                     ) : (null)}
                 </SidebarMenu>
                 {user?.result ? (
