@@ -9,6 +9,7 @@ import {useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 import * as actionType from '../../constants/actionTypes';
+import Axios from 'axios'
 
 import {
     Nav, 
@@ -28,6 +29,11 @@ import {
 } from './NavbarElements'
 
 const Navbar = ({ toggle }) => {
+    const id = JSON.parse(localStorage.getItem('profile'))?.result._id;
+    
+    Axios.get("http://localhost:3001/read2", {params: {id: id}}).then((response)=>{
+        localStorage.setItem('CurrentName', response.data["0"]?.name) 
+    }) 
 
     const [scrollNav, setScrollNav] = useState(false)
 
@@ -109,7 +115,7 @@ const Navbar = ({ toggle }) => {
                                 <Avatar alt={user.result.name} src={user.result.imageUrl}>  {user.result.name.charAt(0)} </Avatar>
                                 </NavItem2>
                                 <NavItem3>
-                                <Typography  variant="h6" >{user?.result.name}</Typography>
+                                <Typography  variant="h6" >{localStorage.getItem('CurrentName')}</Typography>
                                 </NavItem3>
                                 <NavItem2>
                                 <Button4 

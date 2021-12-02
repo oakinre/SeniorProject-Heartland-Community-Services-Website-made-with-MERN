@@ -112,6 +112,151 @@ app.put('/update3', async(req, res) => {
     }
 });
 
+app.put('/update4', async(req, res) => {
+
+    const newName = req.body.newName;
+    
+    const id = req.body.id;
+
+    try{
+       await User.findById(id, (err, updatedUser) => {
+           updatedUser.name = newName;
+           updatedUser.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+app.put('/update5', async(req, res) => {
+
+    const newAOI = req.body.newAOI;
+    
+    const id = req.body.id;
+
+    try{
+       await User.findById(id, (err, updatedUser) => {
+           updatedUser.AOI = newAOI;
+           updatedUser.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+app.put('/update6', async(req, res) => {
+
+    const newCDL = req.body.newCDL;
+    
+    const id = req.body.id;
+
+    try{
+       await User.findById(id, (err, updatedUser) => {
+           updatedUser.CDL = newCDL;
+           updatedUser.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+app.put('/update7', async(req, res) => {
+
+    const newSetup = req.body.newSetup;
+    
+    const id = req.body.id;
+
+    try{
+       await User.findById(id, (err, updatedUser) => {
+           updatedUser.Setup = newSetup;
+           updatedUser.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+app.put('/update8', async(req, res) => {
+
+    const newOverEighteen = req.body.newOverEighteen;
+    
+    const id = req.body.id;
+
+    try{
+       await User.findById(id, (err, updatedUser) => {
+           updatedUser.OverEighteen = newOverEighteen;
+           updatedUser.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+app.put('/update9', async(req, res) => {
+
+    const newWeekOne = req.body.newWeekOne;
+    
+    const id = req.body.id;
+
+    try{
+       await User.findById(id, (err, updatedUser) => {
+           updatedUser.WeekOne = newWeekOne;
+           updatedUser.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+app.put('/update10', async(req, res) => {
+
+    const newWeekTwo = req.body.newWeekTwo;
+    
+    const id = req.body.id;
+
+    try{
+       await User.findById(id, (err, updatedUser) => {
+           updatedUser.WeekTwo = newWeekTwo;
+           updatedUser.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+app.put('/update11', async(req, res) => {
+
+    const newWeekThree = req.body.newWeekThree;
+    
+    const id = req.body.id;
+
+    try{
+       await User.findById(id, (err, updatedUser) => {
+           updatedUser.WeekThree = newWeekThree;
+           updatedUser.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+app.put('/update12', async(req, res) => {
+
+    const newWeekFour = req.body.newWeekFour;
+    
+    const id = req.body.id;
+
+    try{
+       await User.findById(id, (err, updatedUser) => {
+           updatedUser.WeekFour = newWeekFour;
+           updatedUser.save();
+           res.send("update")
+       })
+    } catch(err){
+        console.log(err);
+    }
+});
+
 app.delete("/delete/:id", async (req,res) => {
     const id = req.params.id;
     await EventModel.findByIdAndRemove(id).exec()

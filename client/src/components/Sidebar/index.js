@@ -63,7 +63,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                 {user?.result ? (
                             <div>
                             <NavItem3>
-                            <Typography  variant="h4" >{user?.result.name}</Typography>
+                            <Typography  variant="h4" >{localStorage.getItem('CurrentName')}</Typography>
                             </NavItem3>
                             <NavItem2>
                             <Button4

@@ -33,6 +33,8 @@ const initialState = { firstName: '', lastName: '', email: '', password: '', con
 const options = ["Food Distribution", "Prayer Group"]
 
 const Auth = () => {
+    
+        
     //Checkboxes
     const [isChecked, setIsChecked] = useState(false);
     const [isCheckedNo, setIsCheckedNo] = useState(false);

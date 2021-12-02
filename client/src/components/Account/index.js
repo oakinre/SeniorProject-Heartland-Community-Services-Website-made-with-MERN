@@ -33,7 +33,7 @@ import { useHistory } from 'react-router-dom';
 import img from '../../images/hcs.svg'
 import mongoose from 'mongoose'
 
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '', AOI: 'Food Distribution', CDL: false, Setup: false, OverEighteen: false, WeekOne: "false", WeekTwo: "false", WeekThree: "false", WeekFour: "false"}
+const initialState = { firstName: '', lastName: '', AOI: '', CDL: '', Setup: '', OverEighteen: '', WeekOne: '', WeekTwo: '', WeekThree: '', WeekFour: ''}
 const options = ["Food Distribution", "Prayer Group"]
 
 const AccountPage = () => {
@@ -44,16 +44,17 @@ const AccountPage = () => {
         Axios.get("http://localhost:3001/read2", {params: {id: id}}).then((response)=>{
             setEventList(response.data);
             localStorage.setItem('CurrentCDL', response.data["0"].CDL === true)
+            localStorage.setItem('CurrentSetup', response.data["0"].Setup === true)
+            localStorage.setItem('CurrentWeekOne', response.data["0"].WeekOne === true)
+            localStorage.setItem('CurrentWeekTwo', response.data["0"].WeekTwo === true)
+            localStorage.setItem('CurrentWeekThree', response.data["0"].WeekThree === true)
+            localStorage.setItem('CurrentWeekFour', response.data["0"].WeekFour === true)
             
         }) 
         }, []);
         
     
     const [state, setState] = useContext(UserContext);
-    console.log(state)
-    
-    
-    console.log(id)
     
     
     // const loading = () => {
@@ -236,21 +237,52 @@ const AccountPage = () => {
   /***********************************************************************************/
 
     const classes = useStyles();
-    const [showPassword, setShowPassword] = useState(false)
-    const [isSignup, setIsSignup] = useState(false);
     const [formData, setFormData] = useState(initialState)
-    const dispatch = useDispatch();
+    
     const history = useHistory();
 
-    const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
+    // const[newName, setNewName] = useState("");
+    // const[newAOI, setNewAOI] = useState("");
+    // const[newCDL, setNewCDL] = useState("");
+    // const[newSetup, setNewSetup] = useState("");
+    // const[newOverEighteen, setNewOverEighteen] = useState("");
+    // const[newWeekOne, setNewWeekOne] = useState("");
+    // const[newWeekTwo, setNewWeekTwo] = useState("");
+    // const[newWeekThree, setNewWeekThree] = useState("");
+    // const[newWeekFour, setNewWeekFour] = useState("");
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(isSignup) {
-            dispatch(signup(formData, history))
-        }else {
-            dispatch(signin(formData, history))
-            
+        if(formData.firstName !== '' && formData.lastName !== ''){
+        Axios.put("http://localhost:3001/update4", {id: id, newName: `${formData.firstName} ${formData.lastName}`})
         }
+        if(formData.AOI !== '' ){
+            Axios.put("http://localhost:3001/update5", {id: id, newAOI: formData.AOI})
+        }
+        if(formData.CDL !== '' ){
+            Axios.put("http://localhost:3001/update6", {id: id, newCDL: formData.CDL})
+        }
+        if(formData.Setup !== ''){
+            Axios.put("http://localhost:3001/update7", {id: id, newSetup: formData.Setup})
+        }
+        if(formData.OverEighteen !== ''){
+            Axios.put("http://localhost:3001/update8", {id: id, newOverEighteen: formData.OverEighteen})
+        }
+        if(formData.WeekOne !== ''){
+            Axios.put("http://localhost:3001/update9", {id: id, newWeekOne: formData.WeekOne})
+        }
+        if(formData.WeekTwo !== ''){
+            Axios.put("http://localhost:3001/update10", {id: id, newWeekTwo: formData.WeekTwo})
+        }
+        if(formData.WeekThree !== ''){
+            Axios.put("http://localhost:3001/update11", {id: id, newWeekThree: formData.WeekThree})
+        }
+        if(formData.WeekFour !== ''){
+            Axios.put("http://localhost:3001/update12", {id: id, newWeekFour: formData.WeekFour})
+        }
+
+        history.push("/")
     };
     const handleChange =(e) => {
         setFormData ({...formData, [e.target.name]: e.target.value});
@@ -343,7 +375,7 @@ const AccountPage = () => {
             </NavLogo>
             <FormWrap>
                 <FormContent>
-                    <Form className="e-float-input e-disabled" onSubmit={handleSubmit}>
+                    <Form className={classes.form} onSubmit={handleSubmit}>
                         <FormH1 color='#fff' fullWidth>Volunteer Account Info</FormH1>
                             <Grid container spacing ={2}>
                             {eventList.map((val, key)=> {
