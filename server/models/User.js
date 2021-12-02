@@ -27,6 +27,7 @@ const userSchema = new Schema({
     AOI: {
         type: String,
         required: true
+        
     },
     CDL: {
         type: Boolean,

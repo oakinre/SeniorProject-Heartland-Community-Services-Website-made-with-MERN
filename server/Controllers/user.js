@@ -55,7 +55,7 @@ const signin = async (req, res) => {
       return res.status(400).json({ errors, data: null });
     }
     
-    const { email, password, confirmPassword, firstName, lastName, AOI, CDL, Setup, OverEighteen } = req.body;
+    const { email, password, confirmPassword, firstName, lastName, AOI, CDL, Setup, OverEighteen, WeekOne, WeekTwo, WeekThree, WeekFour } = req.body;
 
     try{
         const existingUser = await User.findOne({email});
@@ -84,7 +84,7 @@ const signin = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 12);
 
-        const result = await User.create({ email, password: hashedPassword, name: `${firstName} ${lastName}`}, AOI, CDL, Setup, OverEighteen)
+        const result = await User.create({ email, password: hashedPassword, name: `${firstName} ${lastName}`, AOI, CDL, Setup, OverEighteen, WeekOne, WeekTwo, WeekThree, WeekFour})
 
         const token = jwt.sign({email: result.email, id: result._id}, JWT_SECRET, {expiresIn: "3h"});
 

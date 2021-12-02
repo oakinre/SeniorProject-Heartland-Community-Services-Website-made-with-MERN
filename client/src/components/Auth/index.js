@@ -29,7 +29,7 @@ import { signin, signup} from '../../actions/auth'
 import { useHistory } from 'react-router-dom';
 import img from '../../images/hcs.svg'
 
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '', AOI: '', CDL: false, Setup: false, OverEighteen: false, WeekOne: "false", WeekTwo: "false", WeekThree: "false", WeekFour: "false"}
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '', AOI: 'Food Distribution', CDL: false, Setup: false, OverEighteen: false, WeekOne: "false", WeekTwo: "false", WeekThree: "false", WeekFour: "false"}
 const options = ["Food Distribution", "Prayer Group"]
 
 const Auth = () => {
