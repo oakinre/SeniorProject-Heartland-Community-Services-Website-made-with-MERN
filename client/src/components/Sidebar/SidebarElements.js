@@ -7,6 +7,7 @@ export const SidebarContainer = styled.aside `
     position: fixed;
     z-index: 999;
     width: 100%;
+    min-height: 100vh;
     height: 100%;
     background: #fff;
     font-weight: bold;
@@ -40,16 +41,17 @@ export const Icon = styled.div `
 
 export const SidebarWrapper = styled.div `
     color: #fff;
+    padding: 50px;
 `;
 
 export const SidebarMenu = styled.ul `
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 80px);
+    grid-template-rows: repeat(6, 55px);
     text-align: center;
 
     @media screen and (max-width: 480px) {
-        grid-template-rows: repeat(6, 60px);
+        grid-template-rows: repeat(6, 55px);
     }
 `;
 
@@ -95,22 +97,20 @@ export const SidebarRouter = styled(LinkRouter) `
         color: #fff;
     }
 `;
-export const NavItem2 = styled.li `
-    color: #fff;
-    padding: 0 10px;
-    height: 80px;
+export const NavItem2 = styled.div `
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
 `;
-export const NavItem3 = styled.li `
-    color: #fff;
-    font-weight:bold ;
-    padding: 5px 10px;
+export const NavItem3 = styled.div `
+    color: #010101;
+    display: flex;
+    justify-content: center;
     height: 80px;
 `;
 export const NavMenu2 = styled.ul `
         display: flex;
-        padding-top: 20px;
-        padding-left: 30px;
-        padding-right: 20px;
         align-items: center;
         list-style: none;
         text-align: center;

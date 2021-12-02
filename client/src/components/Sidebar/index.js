@@ -17,6 +17,7 @@ import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 import * as actionType from '../../constants/actionTypes';
 import {Avatar, Typography} from '@material-ui/core'
+import { Button4 } from '../ButtonElement'
 const Sidebar = ({ isOpen, toggle }) => {
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
@@ -55,20 +56,21 @@ const Sidebar = ({ isOpen, toggle }) => {
                     <SidebarLink to='what' onClick={toggle} offset={-68}> What We Do </SidebarLink>
                     <SidebarLink to='events' onClick={toggle} offset={-68}> Events </SidebarLink>
                     <SidebarLink to='services' onClick={toggle} offset={-68}> Get Involved </SidebarLink>
+                    {user?.result ? (
+                        <SidebarLink to='/auth' onClick={toggle} offset={-68}> Account Info </SidebarLink>
+                    ) : (null)}
                 </SidebarMenu>
                 {user?.result ? (
-                            <div >
-                                <NavMenu2>
-                                <NavItem2>
-                                <Avatar alt={user.result.name} src={user.result.imageUrl}>  {user.result.name.charAt(0)} </Avatar>
-                                </NavItem2>
-                                <NavItem3>
-                                <Typography  variant="h6" >{user?.result.name}</Typography>
-                                </NavItem3>
-                                <NavItem2>
-                                <SideBtnWrap onClick={logout}>Logout</SideBtnWrap>
-                                </NavItem2>
-                                </NavMenu2>
+                            <div>
+                            <NavItem3>
+                            <Typography  variant="h4" >{user?.result.name}</Typography>
+                            </NavItem3>
+                            <NavItem2>
+                            <Button4
+                            primary = 'true'
+                            dark = 'true' 
+                            onClick={logout}>Logout</Button4>
+                            </NavItem2>
                             </div>
                         ) : (
                 <SideBtnWrap>
