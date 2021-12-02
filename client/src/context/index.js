@@ -20,12 +20,21 @@ const UserProvider = ({ children }) => {
     }
     const fetchUser = async () => {
         const { data: response } = await axios.get("http://localhost:3001/user/me");
-        console.log(response);
         if (response.data && response.data.user) {
             setUser({
                 data: {
                     id: response.data.user.id,
-                    email: response.data.user.email
+                    email: response.data.user.email,
+                    name: response.data.user.name,
+                    password: response.data.user.password,
+                    AOI: response.data.user.AOI,
+                    CDL: response.data.user.CDL,
+                    Setup: response.data.user.Setup,
+                    OverEighteen: response.data.user.OverEighteen,
+                    WeekOne: response.data.user.WeekOne,
+                    WeekTwo: response.data.user.WeekTwo,
+                    WeekThree: response.data.user.WeekThree,
+                    WeekFour: response.data.user.WeekFour
                 },
                 loading: false,
                 error: null,

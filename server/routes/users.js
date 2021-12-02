@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const auth = require("../middleware/auth")
 const {signin,signup, me} = require('../Controllers/user.js')
-const {body, validationResult} = require("express-validator");
+const {body} = require("express-validator");
 
 
 router.post("/signin",  signin);

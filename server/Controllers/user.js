@@ -106,7 +106,15 @@ const me = async (req, res) => {
         id: user._id,
         email: user.email,
         name: user.name,
-        password: user.password
+        password: user.password,
+        AOI: user.AOI,
+        CDL: user.CDL,
+        Setup: user.Setup,
+        OverEighteen: user.OverEighteen,
+        WeekOne: user.WeekOne,
+        WeekTwo: user.WeekTwo,
+        WeekThree: user.WeekThree,
+        WeekFour: user.WeekFour
       },
     },
   });
