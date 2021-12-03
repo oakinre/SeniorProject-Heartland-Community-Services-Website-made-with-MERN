@@ -11,6 +11,7 @@ import {
     } from './EventElements'
 import img from '../../images/help.svg'
 import Axios from 'axios'
+import { Button5 } from '../ButtonElement'
 
 const Events = () => {
 
@@ -21,7 +22,7 @@ const Events = () => {
             setEventList(response.data);
         })
     }, []);
-
+  
     return (
         <EventContainer id = 'events'>
         <EventWrapper>
@@ -42,6 +43,15 @@ const Events = () => {
                         )
                         })}
                     </TextWrapper>
+                    {
+                    (JSON.parse(localStorage.getItem('profile'))?.result._id === '61a9266752a033cec18e6ec9')  ?
+                    <Button5
+                    primary = 'true'
+                    dark = 'true' 
+                    to='/event'>
+                        Update
+                    </Button5> : (null)
+                }
                 </Column1>
                 <Column2>
                     <Img src={img} alt='Car' />

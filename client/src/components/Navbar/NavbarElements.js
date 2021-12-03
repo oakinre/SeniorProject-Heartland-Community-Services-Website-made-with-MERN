@@ -155,6 +155,17 @@ export const NavBtnLink = styled(LinkRouter) `
         color: #681A1A;
     }
 `;
+export const NavBtnLink2 = styled(LinkRouter) `
+   
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+        transition: all 0s ease-in-out;
+        text-decoration: underline;
+        background: #fff;
+        color: grey;
+    }
+`;
 
 export const Img = styled.img `
     width: 100%;

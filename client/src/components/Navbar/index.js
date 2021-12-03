@@ -24,6 +24,7 @@ import {
     NavLinks,
     NavBtn,
     NavBtnLink,
+    NavBtnLink2,
     ImgWrap,
     Img
 } from './NavbarElements'
@@ -112,10 +113,12 @@ const Navbar = ({ toggle }) => {
                             <div >
                                 <NavMenu2>
                                 <NavItem2>
-                                <Avatar alt={user.result.name} src={user.result.imageUrl}>  {user.result.name.charAt(0)} </Avatar>
+                                <Avatar alt={user.result.name} src={user.result.imageUrl}>  {user.result.name.charAt(0).toUpperCase()} </Avatar>
                                 </NavItem2>
                                 <NavItem3>
-                                <Typography  variant="h6" >{localStorage.getItem('CurrentName')}</Typography>
+                                <NavBtnLink2 to ='/myacc'>
+                                <Typography  variant="h6" >{localStorage.getItem('CurrentName')?.toUpperCase()}</Typography>
+                                </NavBtnLink2>
                                 </NavItem3>
                                 <NavItem2>
                                 <Button4 

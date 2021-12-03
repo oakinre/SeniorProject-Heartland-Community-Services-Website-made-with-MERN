@@ -6,11 +6,11 @@ import {
     SidebarWrapper,
     SidebarMenu,
     SidebarLink,
+    SidebarLink2,
     SideBtnWrap,
     SidebarRouter,
     NavItem2,
     NavItem3,
-    NavMenu2
 } from './SidebarElements'
 import {useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -57,13 +57,13 @@ const Sidebar = ({ isOpen, toggle }) => {
                     <SidebarLink to='events' onClick={toggle} offset={-68}> Events </SidebarLink>
                     <SidebarLink to='services' onClick={toggle} offset={-68}> Get Involved </SidebarLink>
                     {user?.result ? (
-                    <SidebarLink to='/auth' onClick={toggle} offset={-68}> Account Info </SidebarLink>
+                    <SidebarLink2 to='/myacc' onClick={toggle} offset={-68}> Account Info </SidebarLink2>
                     ) : (null)}
                 </SidebarMenu>
                 {user?.result ? (
                             <div>
                             <NavItem3>
-                            <Typography  variant="h4" >{localStorage.getItem('CurrentName')}</Typography>
+                            <Typography  variant="h4" >{localStorage.getItem('CurrentName')?.toUpperCase()}</Typography>
                             </NavItem3>
                             <NavItem2>
                             <Button4
