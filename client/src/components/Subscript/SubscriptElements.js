@@ -7,7 +7,8 @@ export const SubContainer = styled.footer`
 `;
 
 export const SubItems = styled.div `
-    padding: 100px 24px;
+    height: 700px;
+    padding: 100px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
