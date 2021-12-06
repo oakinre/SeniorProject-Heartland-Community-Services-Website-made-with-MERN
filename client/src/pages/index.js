@@ -10,7 +10,7 @@ import Events from '../components/Events'
 import What from '../components/What'
 import Subscript from '../components/Subscript'
 const Home = () => {
-    
+
     const [isOpen, setIsOpen] = useState(false)
     const toggle = () => {
         setIsOpen(!isOpen)

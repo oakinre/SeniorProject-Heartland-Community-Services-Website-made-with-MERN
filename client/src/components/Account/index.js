@@ -23,54 +23,36 @@ FormLabel3,
 FormInput,
 InfoContainer
 } from './AccountElements'
-// import { GoogleLogin } from 'react-google-login'
-import { useDispatch } from 'react-redux'
-import {Button, Grid} from '@material-ui/core'
+import {Grid} from '@material-ui/core'
 import useStyles from './styles'
 import Input from './Input'
-import { signin, signup} from '../../actions/auth'
 import { useHistory } from 'react-router-dom';
 import img from '../../images/hcs.svg'
-import mongoose from 'mongoose'
 
 const initialState = { firstName: '', lastName: '', AOI: '', CDL: '', Setup: '', OverEighteen: '', WeekOne: '', WeekTwo: '', WeekThree: '', WeekFour: ''}
 const options = ["Food Distribution", "Prayer Group"]
 
 const AccountPage = () => {
+    
     //User Info
     const [eventList, setEventList] = useState([]);
+    const [state, setState] = useContext(UserContext);
     const id = JSON.parse(localStorage.getItem('profile')).result._id;
+    
     useEffect(()=>{
         Axios.get("http://localhost:3001/read2", {params: {id: id}}).then((response)=>{
             setEventList(response.data);
-            localStorage.setItem('CurrentCDL', response.data["0"].CDL === true)
-            localStorage.setItem('CurrentSetup', response.data["0"].Setup === true)
-            localStorage.setItem('CurrentWeekOne', response.data["0"].WeekOne === true)
-            localStorage.setItem('CurrentWeekTwo', response.data["0"].WeekTwo === true)
-            localStorage.setItem('CurrentWeekThree', response.data["0"].WeekThree === true)
-            localStorage.setItem('CurrentWeekFour', response.data["0"].WeekFour === true)
+            localStorage.setItem('CurrentCDL', response.data["0"].CDL === true);
+            localStorage.setItem('CurrentSetup', response.data["0"].Setup === true);
+            localStorage.setItem('CurrentWeekOne', response.data["0"].WeekOne === true);
+            localStorage.setItem('CurrentWeekTwo', response.data["0"].WeekTwo === true);
+            localStorage.setItem('CurrentWeekThree', response.data["0"].WeekThree === true);
+            localStorage.setItem('CurrentWeekFour', response.data["0"].WeekFour === true);
+            // window.location.reload(false);
             
         }) 
         }, []);
-        
-    
-    const [state, setState] = useContext(UserContext);
-    
-    
-    // const loading = () => {
-    //     if(state["loading"] === true){
-    //         setTimeout(loading, 100);
-    //         return
-    //     }else if(state["loading"] === false){
-    //     console.log(state["loading"],'nav')
-    //     var CDL = ((state["loading"] === true) ? false : true)
-        
-    //     return(CDL)
-    //     }
-    // }
-    
 
-    
     var CDL = ( localStorage.getItem('CurrentCDL') === 'true')
     var Setup = (localStorage.getItem('CurrentSetup') === 'true')
     var OverEighteen = (localStorage.getItem('CurrentOverEighteen') === 'true')
@@ -241,15 +223,6 @@ const AccountPage = () => {
     
     const history = useHistory();
 
-    // const[newName, setNewName] = useState("");
-    // const[newAOI, setNewAOI] = useState("");
-    // const[newCDL, setNewCDL] = useState("");
-    // const[newSetup, setNewSetup] = useState("");
-    // const[newOverEighteen, setNewOverEighteen] = useState("");
-    // const[newWeekOne, setNewWeekOne] = useState("");
-    // const[newWeekTwo, setNewWeekTwo] = useState("");
-    // const[newWeekThree, setNewWeekThree] = useState("");
-    // const[newWeekFour, setNewWeekFour] = useState("");
 
 
     const handleSubmit = (e) => {

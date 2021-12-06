@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.js");
 const admin = require("../models/admin");
-const {body, validationResult} = require("express-validator");
+const {validationResult} = require("express-validator");
 const JWT_SECRET= "2389th230g23pf13809g123pogb32108gpn23ogh3208gn23-9gh3028ghdsafdasf321dsa54";
 const signin = async (req, res) => {
 
@@ -10,7 +10,7 @@ const signin = async (req, res) => {
 
     try{
         const existingUser = await User.findOne({ email });
-
+  
         if(!existingUser){
          return res.status(400).json({
             errors: [

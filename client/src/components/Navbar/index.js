@@ -30,6 +30,7 @@ import {
 } from './NavbarElements'
 
 const Navbar = ({ toggle }) => {
+    
     const id = JSON.parse(localStorage.getItem('profile'))?.result._id;
     
     Axios.get("http://localhost:3001/read2", {params: {id: id}}).then((response)=>{

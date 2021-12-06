@@ -8,14 +8,13 @@ import EventsPage from './pages/event';
 
 
 function App() {
-  
   return (
     <Router>
       <Switch>
         <Route path='/' component={Home} exact />
         <Route path='/auth' component={Auth} exact />
         <Route path='/myacc' component= {MyAccount} exact />
-        <Route path='/event' component= {EventsPage} exact />
+        <Route path='/event'  component= {EventsPage} exact />
       </Switch>
     </Router>
   );

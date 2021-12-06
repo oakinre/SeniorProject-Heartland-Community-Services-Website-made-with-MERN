@@ -34,6 +34,14 @@ export const SubH3 = styled.h3 `
     font-size: 1.2rem;
     max-width: 600px;
 `
+export const SubH4 = styled.p `
+    color: darkred;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    max-width: 1000px;
+`
 export const Subscribe = styled.form `
     min-width: 400px;
     justify-content: left;

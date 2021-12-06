@@ -34,7 +34,9 @@ const options = ["Food Distribution", "Prayer Group"]
 
 const Auth = () => {
     
-        
+    const refresh = () =>{
+         window.location.reload(true);
+    }
     //Checkboxes
     const [isChecked, setIsChecked] = useState(false);
     const [isCheckedNo, setIsCheckedNo] = useState(false);

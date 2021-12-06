@@ -4,10 +4,8 @@ const cors = require('cors');
 const app = express();
 const {User} = require("./Controllers/user");
 const EventModel = require("./models/event");
-const AuthRoute = require("./routes/auth");
 const userRoutes = require("./routes/users.js");
-
-
+const EmailModel = require("./models/email")
 app.use(express.json());
 app.use(cors());
 app.use('/user', userRoutes);
@@ -38,6 +36,31 @@ app.post('/insert', async(req, res) => {
 
     try{
         await event.save();
+        res.send("inserted data");
+    } catch(err){
+        console.log(err);
+    }
+});
+
+app.post('/insert2', async(req, res) => {
+
+    const emailSub = req.body.email;
+
+    try{
+        const existingEmail = await EmailModel.findOne({ email: emailSub });
+
+        if(existingEmail) {
+            return res.status(400).json({
+                errors: [
+                {
+                 msg: "Email already in use",
+                },
+                ],
+            data: null,
+            });
+        }
+        const email = new EmailModel({email: emailSub});
+        await email.save();
         res.send("inserted data");
     } catch(err){
         console.log(err);
