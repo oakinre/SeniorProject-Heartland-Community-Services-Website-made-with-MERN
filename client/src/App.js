@@ -5,6 +5,7 @@ import Home from './pages'
 import Auth from './pages/auth'
 import MyAccount from './pages/account'
 import EventsPage from './pages/event';
+import ProductForm from './pages/product';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/auth' component={Auth} exact />
         <Route path='/myacc' component= {MyAccount} exact />
         <Route path='/event'  component= {EventsPage} exact />
+        <Route path='/product' component={ProductForm}></Route>
       </Switch>
     </Router>
   );

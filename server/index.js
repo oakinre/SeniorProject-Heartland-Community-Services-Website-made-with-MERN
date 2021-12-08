@@ -5,7 +5,9 @@ const app = express();
 const {User} = require("./Controllers/user");
 const EventModel = require("./models/event");
 const userRoutes = require("./routes/users.js");
-const EmailModel = require("./models/email")
+const EmailModel = require("./models/email");
+const ProductModel = require("./models/product");
+
 app.use(express.json());
 app.use(cors());
 app.use('/user', userRoutes);
@@ -61,6 +63,25 @@ app.post('/insert2', async(req, res) => {
         }
         const email = new EmailModel({email: emailSub});
         await email.save();
+        res.send("inserted data");
+    } catch(err){
+        console.log(err);
+    }
+});
+
+app.post('/insert3', async(req, res) => {
+
+    const itemType = req.body.itemType;
+    const exprDate = req.body.exprDate;
+    const estimatedPalettes = req.body.estimatedPalettes;
+    const generalDesc = req.body.generalDesc;
+    const nameOfOrg = req.body.nameOfOrg;
+    const contact = req.body.contact
+
+    const product = new ProductModel({itemType: itemType, exprDate: exprDate,estimatedPalettes: estimatedPalettes, generalDesc: generalDesc, nameOfOrg: nameOfOrg, contact: contact});
+
+    try{
+        await product.save();
         res.send("inserted data");
     } catch(err){
         console.log(err);

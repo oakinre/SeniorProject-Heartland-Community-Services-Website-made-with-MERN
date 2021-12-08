@@ -21,7 +21,7 @@ const Services = () => {
             <ServicesWrapper>
                 <ServicesCard>
                     <ServicesH2>Partner</ServicesH2>
-                    <ServicesLink2 to= '/'>
+                    <ServicesLink2 to= '/product'>
                     <ServicesIcon src={Icon1} />
                     </ServicesLink2>
                     <ServicesP>Corporate product donations aid in our mission to provide help and hope.</ServicesP>
