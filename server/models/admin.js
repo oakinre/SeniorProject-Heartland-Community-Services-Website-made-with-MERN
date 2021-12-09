@@ -17,6 +17,9 @@ const adminSchema = new Schema({
         type: String,
         required: true
     },
+    title: {
+        type: String,
+    },
     id: {
         type: String
     },

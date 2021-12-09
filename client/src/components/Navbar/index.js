@@ -117,9 +117,12 @@ const Navbar = ({ toggle }) => {
                                 <Avatar alt={user.result.name} src={user.result.imageUrl}>  {user.result.name.charAt(0).toUpperCase()} </Avatar>
                                 </NavItem2>
                                 <NavItem3>
+                                {localStorage?.getItem('title')?.substring(0,5) === 'Admin' ?
+                                <Typography  variant="h6" >{user.result.name}</Typography> : 
                                 <NavBtnLink2 to ='/myacc'>
                                 <Typography  variant="h6" >{user.result.name}</Typography>
                                 </NavBtnLink2>
+                                }   
                                 </NavItem3>
                                 <NavItem2>
                                 <Button4 

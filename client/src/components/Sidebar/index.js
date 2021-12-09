@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                     <SidebarLink to='what' onClick={toggle} offset={-68}> What We Do </SidebarLink>
                     <SidebarLink to='events' onClick={toggle} offset={-68}> Events </SidebarLink>
                     <SidebarLink to='services' onClick={toggle} offset={-68}> Get Involved </SidebarLink>
-                    {user?.result ? (
+                    {localStorage?.getItem('title')?.substring(0,5) !== 'Admin' ? (
                     <SidebarLink2 to='/myacc' onClick={toggle} offset={-68}> Account Info </SidebarLink2>
                     ) : (null)}
                 </SidebarMenu>

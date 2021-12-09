@@ -44,11 +44,19 @@ const adminSignIn = async (req, res) => {
 }
 
 const adminSignUp = async (req, res) => {
-
+  var num = 0
+  var title = "Admin "+ num;
   
+  
+  while ( await Admin.findOne({title})){
+    num++;
+    title = "Admin "+num;
+  }
+
   const { username, password, confirmPassword, firstName, lastName} = req.body;
-  console.log(firstName)
+  
   try{
+      
       const existingUser = await Admin.findOne({username});
       
       if(existingUser) {
@@ -75,7 +83,7 @@ const adminSignUp = async (req, res) => {
 
       const hashedPassword = await bcrypt.hash(password, 12);
 
-      const result = await Admin.create({ username, password: hashedPassword, name: `${firstName} ${lastName}`})
+      const result = await Admin.create({ username, password: hashedPassword, name: `${firstName} ${lastName}`, title})
 
       const token = jwt.sign({username: result.username, id: result._id}, JWT_SECRET, {expiresIn: "5h"});
 
