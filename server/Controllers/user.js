@@ -1,16 +1,99 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.js");
-const admin = require("../models/admin");
+const Admin = require("../models/admin");
 const {validationResult} = require("express-validator");
 const JWT_SECRET= "2389th230g23pf13809g123pogb32108gpn23ogh3208gn23-9gh3028ghdsafdasf321dsa54";
+
+/***************************ADMINS***************************/
+const adminSignIn = async (req, res) => {
+
+  const { username, password } = req.body;
+
+  try{
+      const existingUser = await Admin.findOne({ username });
+      
+      if(!existingUser){
+       return res.status(400).json({
+          errors: [
+            {
+              msg: "Invalids credentials",
+            },
+          ],
+          data: null,
+        });
+      }
+      const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
+      if(!isPasswordCorrect){
+              return res.status(400).json({
+                errors: [
+                  {
+                    msg: "Invalids credentials",
+                  },
+                ],
+                data: null,
+              });  
+      }
+      const token = jwt.sign({username: existingUser.username, id: existingUser._id}, JWT_SECRET, {expiresIn: "5h"});
+
+      res.status(200).json({ result: existingUser, token, errors: []});
+
+  }catch(error){
+      res.status(500).json({message: 'Something went wrong'});
+  }
+}
+
+const adminSignUp = async (req, res) => {
+
+  
+  const { username, password, confirmPassword, firstName, lastName} = req.body;
+  console.log(firstName)
+  try{
+      const existingUser = await Admin.findOne({username});
+      
+      if(existingUser) {
+          return res.status(400).json({
+            errors: [
+              {
+                msg: "Username already in use",
+              },
+            ],
+            data: null,
+          });
+        }
+
+      if (password != confirmPassword) {
+          return res.status(400).json({
+            errors: [
+              {
+                msg: "Confirmed Password not the same",
+              },
+            ],
+            data: null,
+          });
+        };
+
+      const hashedPassword = await bcrypt.hash(password, 12);
+
+      const result = await Admin.create({ username, password: hashedPassword, name: `${firstName} ${lastName}`})
+
+      const token = jwt.sign({username: result.username, id: result._id}, JWT_SECRET, {expiresIn: "5h"});
+
+     res.status(200).json({ result: result, token, errors: []});
+
+  } catch(error) {
+      console.log(error);
+      res.status(500).json({message: 'Something went wrong'});
+  }
+}
+/***************************USERS****************************/
 const signin = async (req, res) => {
 
     const { email, password } = req.body;
 
     try{
         const existingUser = await User.findOne({ email });
-  
+        
         if(!existingUser){
          return res.status(400).json({
             errors: [
@@ -124,5 +207,5 @@ const me = async (req, res) => {
 }
 
 module.exports = {
-    signin, signup, me, User
+    adminSignIn, adminSignUp, signin, signup, me, User
 }

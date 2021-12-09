@@ -27,19 +27,13 @@ const authReducer = (state = { authData: null }, action) => {
             localStorage.setItem('CurrentWeekFour', response.data["0"].WeekFour === true)
         })
       localStorage.setItem('token',JSON.parse(localStorage.getItem('profile')).token);
-      //User Info
-      // localStorage.setItem('AOI',JSON.parse(localStorage.getItem('profile')).result.AOI);
-      // localStorage.setItem('CDL',JSON.parse(localStorage.getItem('profile')).result.CDL);
-      // localStorage.setItem('OverEighteen',JSON.parse(localStorage.getItem('profile')).result.OverEighteen);
-      // localStorage.setItem('Setup',JSON.parse(localStorage.getItem('profile')).result.Setup);
-      // localStorage.setItem('WeekOne',JSON.parse(localStorage.getItem('profile')).result.WeekOne);
-      // localStorage.setItem('WeekTwo',JSON.parse(localStorage.getItem('profile')).result.WeekTwo);
-      // localStorage.setItem('WeekThree',JSON.parse(localStorage.getItem('profile')).result.WeekThree);
-      // localStorage.setItem('WeekFour',JSON.parse(localStorage.getItem('profile')).result.WeekFour);
-      // localStorage.setItem('Name',JSON.parse(localStorage.getItem('profile')).result.name);
-      // localStorage.setItem('Email',JSON.parse(localStorage.getItem('profile')).result.email);
-      
+     
     
+      return { ...state, authData: action.data, loading: false, errors: null };
+    case actionType.AdminAUTH:
+      localStorage.setItem('profile', JSON.stringify({ ...action?.data }));
+      const id2 = JSON.parse(localStorage.getItem('profile')).result._id;
+      localStorage.setItem('id', id2);
       return { ...state, authData: action.data, loading: false, errors: null };
     case actionType.LOGOUT:
       localStorage.clear();

@@ -13,6 +13,10 @@ const adminSchema = new Schema({
         min: 5
 
     },
+    name: {
+        type: String,
+        required: true
+    },
     id: {
         type: String
     },

@@ -66,6 +66,18 @@ export const FooterLink = styled(LinkScroll) `
         transition: 0.3s ease-out;
     }
 `;
+export const FooterLink2 = styled(Link) `
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+
+    &:hover {
+        color: #545859;
+        transition: 0.3s ease-out;
+    }
+`;
 
 export const Socials = styled.section `
     max-width: 1000px;

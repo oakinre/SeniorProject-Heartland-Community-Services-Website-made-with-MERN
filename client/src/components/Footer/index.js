@@ -9,6 +9,7 @@ FooterLinksWrapper,
 FooterLinkItems,
 FooterLinkTitle,
 FooterLink,
+FooterLink2,
 Socials,
 SocialsWrap,
 SocialLogo,
@@ -32,6 +33,11 @@ const Footer = () => {
                             <FooterLink to='what' smooth={true} duration={500} spy={true} exact='true' offset={-70}>What We Do</FooterLink>
                             <FooterLink to='events' smooth={true} duration={500} spy={true} exact='true' offset={-70}>Events</FooterLink>
                             <FooterLink to='services' smooth={true} duration={500} spy={true} exact='true' offset={-70}>Get Involved</FooterLink>
+                            {
+                        (JSON.parse(localStorage.getItem('profile'))?.result._id === '61b10423fe9f1816fbbe9ad0')  ?
+                    <FooterLink2 to='/adminCreate' >Admin Create</FooterLink2> : <FooterLink2 to='/admin' >Admin Portal</FooterLink2>
+                    }
+                           
                     </FooterLinkItems>
                     </FooterLinksWrapper>
                 </FooterLinksContainer>

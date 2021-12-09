@@ -64,7 +64,7 @@ const Navbar = ({ toggle }) => {
     const logout = () => {
         dispatch({ type: actionType.LOGOUT });
 
-        history.push('/auth');
+        history.push('/');
 
         setUser(null);
   };
@@ -118,7 +118,7 @@ const Navbar = ({ toggle }) => {
                                 </NavItem2>
                                 <NavItem3>
                                 <NavBtnLink2 to ='/myacc'>
-                                <Typography  variant="h6" >{localStorage.getItem('CurrentName')?.toUpperCase()}</Typography>
+                                <Typography  variant="h6" >{user.result.name}</Typography>
                                 </NavBtnLink2>
                                 </NavItem3>
                                 <NavItem2>
