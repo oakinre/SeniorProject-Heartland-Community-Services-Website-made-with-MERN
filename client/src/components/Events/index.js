@@ -44,7 +44,7 @@ const Events = () => {
                         })}
                     </TextWrapper>
                     {
-                    (JSON.parse(localStorage.getItem('profile'))?.result._id === '61b10423fe9f1816fbbe9ad0')  ?
+                    (localStorage?.getItem('title')?.substring(0,5) === 'Admin')  ?
                     <Button5
                     primary = 'true'
                     dark = 'true' 
